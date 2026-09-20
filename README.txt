@@ -1,1 +1,1 @@
-GLOPE Website V2. Upload index.html, style.css and script.js to the repository root. This version improves the mobile hero so the product visuals appear much earlier.
+GLOPE Website V3 — uses the user's real GLOPE Honey product photo. Upload index.html, style.css, script.js and the images folder to the repository root.
