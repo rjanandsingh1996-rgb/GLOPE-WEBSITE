@@ -6,3 +6,16 @@
 .section{padding:70px 0}.section h2{font-size:38px}.section-heading{margin-bottom:35px}.product-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.product-card{grid-template-columns:1fr;min-height:0}.product-visual{min-height:235px}.product-content{padding:27px 24px}.about-grid{gap:50px}.about-art{min-height:310px;box-shadow:12px 12px 0 #d3c6a7}.about-art b{font-size:38px}.feature-grid{grid-template-columns:1fr}.fssai-note{align-items:flex-start;flex-direction:column;gap:4px}.contact-grid{gap:45px}.footer-grid{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:480px){.container{width:90%}.nav{min-height:74px}.brand-mark{width:40px;height:40px}.brand strong{font-size:19px}.brand small{font-size:7px}.nav nav{top:74px}.hero-grid{padding-top:36px}.hero h1{font-size:52px}.hero-text{font-size:15px}.trust-row span{white-space:nowrap}.hero-art{height:215px}.honey-jar{left:20%}.ghee-jar{right:16%}}
+.brand-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+}
