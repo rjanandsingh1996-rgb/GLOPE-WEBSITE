@@ -1,8 +1,1 @@
-GLOPE static website
-Files:
-- index.html
-- style.css
-- script.js
-- images/ (add real product/logo images here later)
-
-Note: replace/update contact details and FSSAI information when finalized.
+GLOPE Website V2. Upload index.html, style.css and script.js to the repository root. This version improves the mobile hero so the product visuals appear much earlier.
