@@ -1,23 +1,26 @@
-GLOPE WEBSITE — V7 PREMIUM HONEY VISUAL
+GLOPE WEBSITE — V8 FOUNDER STORY
 
-This version uses the new square GLOPE Honey premium campaign image supplied by the user.
+This version adds the full GLOPE founder story and timeline.
 
-Replace/upload these files in the GitHub repository ROOT:
+Founder: Ashish Singh
+Current qualification path: Pursuing Chartered Accountancy
+GLOPE story:
+2017 — left IPCC training to study honey bees, honey production, quality and adulteration.
+2019 — GLOPE started as a honey farm.
+2020 — major business setback/loss during COVID-19 pandemic.
+2022 — business recovery.
+Today — focus on genuine products, no unnecessary claims, sensible pricing, and fairer value for farmers.
+
+Other included details:
+Instagram: @glopeagro
+FSSAI: FSSAI-22724113001721
+Honey packs: 1 kg, 500 g, 250 g
+Ghee: 1 kg — Coming Soon
+
+Upload/replace in the GitHub repository ROOT:
 - index.html
 - style.css
 - script.js
 - Glope-Logo.png
 - glope-honey-premium.jpg
 - glopeagro_qr.png
-
-The older glope-honey-real.jpg is no longer required by V7.
-
-V7 additions:
-- New premium Honey campaign visual
-- Square image treatment for better use of the new photo
-- Existing Instagram @glopeagro + QR
-- FSSAI: FSSAI-22724113001721
-- Existing WhatsApp, email and contact details
-- Mobile-responsive layout
-
-Note: The campaign image contains product/marketing text. The website copy itself does not add separate unverified claims beyond the supplied visual.
