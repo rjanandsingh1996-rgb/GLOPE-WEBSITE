@@ -1,32 +1,23 @@
-GLOPE WEBSITE — V5 POLISHED BRAND VERSION
+GLOPE WEBSITE — V7 PREMIUM HONEY VISUAL
 
-Upload/replace these files in the GitHub repository ROOT:
+This version uses the new square GLOPE Honey premium campaign image supplied by the user.
+
+Replace/upload these files in the GitHub repository ROOT:
 - index.html
 - style.css
 - script.js
 - Glope-Logo.png
-- glope-honey-real.jpg
+- glope-honey-premium.jpg
+- glopeagro_qr.png
 
-No images folder is required.
+The older glope-honey-real.jpg is no longer required by V7.
 
-V5 improvements:
-- Refined premium header and logo sizing
-- Cleaner Honey hero presentation
-- Better product image card and caption
-- Dedicated pack-size display: 1 kg, 500 g, 250 g
-- Stronger product section hierarchy
-- New brand-story section
-- Improved mobile spacing and navigation
-- WhatsApp enquiry CTAs
-- No unverified product/certification claims
+V7 additions:
+- New premium Honey campaign visual
+- Square image treatment for better use of the new photo
+- Existing Instagram @glopeagro + QR
+- FSSAI: FSSAI-22724113001721
+- Existing WhatsApp, email and contact details
+- Mobile-responsive layout
 
-Company details used:
-GLOPE Agro Products
-From Farm to Family
-Phone/WhatsApp: +91 72538 77546
-Email: glopeenterprises1@gmail.com
-Address: Pokharpura, Kundol, Near Delhi Public School, Agra
-Honey: 1 kg, 500 g, 250 g
-Ghee: 1 kg — Coming Soon
-
-After committing the files, Cloudflare should deploy automatically.
+Note: The campaign image contains product/marketing text. The website copy itself does not add separate unverified claims beyond the supplied visual.
