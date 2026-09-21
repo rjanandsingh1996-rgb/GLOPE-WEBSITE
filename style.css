@@ -262,3 +262,32 @@ footer{background:#102c20;color:#bdc9bf;padding:30px 0}
   .story-principles div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}
   .story-principles div:last-child{border-bottom:0}
 }
+
+/* Behind GLOPE — V9 */
+.people-section{padding:105px 0;background:#fbf8ef;color:#183326}
+.people-heading{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:50px}
+.people-heading h2{font:700 clamp(42px,5vw,61px)/1.03 'Playfair Display',Georgia,serif;color:#173d2b;letter-spacing:-1.5px}
+.people-heading h2 span{color:#b48118}
+.people-heading>p{font-size:16px;line-height:1.8;color:#667166;max-width:540px}
+.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.person-card{position:relative;background:#fff;border:1px solid #e7dfcd;padding:40px;min-height:320px;box-shadow:0 16px 35px rgba(43,54,38,.06);overflow:hidden}
+.person-card:after{content:'';position:absolute;width:170px;height:170px;border-radius:50%;right:-70px;bottom:-70px;background:#f4ead1}
+.person-number{font:700 31px 'Playfair Display',Georgia,serif;color:#c09024}
+.person-role{font-size:9px;letter-spacing:2px;font-weight:900;color:#7c877e;margin-top:25px}
+.person-card h3{font:700 33px 'Playfair Display',Georgia,serif;color:#183f2c;margin:7px 0 13px}
+.person-card p{font-size:14px;line-height:1.75;color:#667166;max-width:470px;position:relative;z-index:1}
+.person-focus{display:flex;gap:7px;flex-wrap:wrap;margin-top:25px;position:relative;z-index:1}
+.person-focus span{padding:6px 9px;background:#f5f0e4;border:1px solid #e4dac2;color:#79601e;font-size:9px;font-weight:900;letter-spacing:.8px}
+.people-closing{margin-top:28px;padding:25px 30px;background:#173d2b;color:#fff;display:flex;align-items:center;gap:30px}
+.closing-mark{font:700 21px 'Playfair Display',Georgia,serif;color:#f1c65c;letter-spacing:3px}
+.people-closing p{font:italic 18px/1.5 'Playfair Display',Georgia,serif;color:#dbe3dc}
+
+@media(max-width:800px){
+  .people-section{padding:75px 0}
+  .people-heading{grid-template-columns:1fr;gap:20px;margin-bottom:35px}
+  .people-heading>p{font-size:14px}
+  .people-grid{grid-template-columns:1fr}
+  .person-card{padding:30px;min-height:290px}
+  .people-closing{flex-direction:column;align-items:flex-start;gap:10px;padding:24px}
+  .people-closing p{font-size:16px}
+}

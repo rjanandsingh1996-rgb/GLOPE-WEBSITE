@@ -1,23 +1,22 @@
-GLOPE WEBSITE — V8 FOUNDER STORY
+GLOPE WEBSITE — V9 FAMILY-LED BRAND STORY
 
-This version adds the full GLOPE founder story and timeline.
+V9 builds on V8 and adds a "Behind GLOPE" section explaining the family-led nature of the brand.
 
-Founder: Ashish Singh
-Current qualification path: Pursuing Chartered Accountancy
-GLOPE story:
-2017 — left IPCC training to study honey bees, honey production, quality and adulteration.
-2019 — GLOPE started as a honey farm.
-2020 — major business setback/loss during COVID-19 pandemic.
-2022 — business recovery.
-Today — focus on genuine products, no unnecessary claims, sensible pricing, and fairer value for farmers.
+Founder:
+Ashish Singh — Founder, pursuing Chartered Accountancy.
 
-Other included details:
+Founder’s brother:
+Chemistry scholar, teacher and technology enthusiast. Contributes to product understanding, quality oversight and technical/brand work.
+
+The website describes the work as family-led and hands-on rather than claiming a separate team.
+
+Other details:
 Instagram: @glopeagro
 FSSAI: FSSAI-22724113001721
-Honey packs: 1 kg, 500 g, 250 g
+Honey: 1 kg, 500 g, 250 g
 Ghee: 1 kg — Coming Soon
 
-Upload/replace in the GitHub repository ROOT:
+Replace/upload these files in the GitHub repository ROOT:
 - index.html
 - style.css
 - script.js
