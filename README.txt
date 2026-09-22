@@ -1,19 +1,12 @@
-GLOPE Website V12
+GLOPE Website V13
 ==================
-Premium editorial static website for GLOPE Agro Products — From Farm to Family.
+V13 is a mobile-first polish pass over V12.
 
-V12 refinements:
-- Repositioned 250 g / 500 g / 1 kg hero size badges so they do not overlap campaign artwork text.
-- Story image now uses contain/no-crop so the full campaign artwork remains visible.
-- Refined philosophy card rhythm and section transition.
-- Removed duplicate honey product image from Instagram/contact area; Instagram QR is now the visual focus.
-- Added small interaction refinements to contact links.
-- Responsive desktop/tablet/mobile layout retained.
-
-Files:
-index.html
-style.css
-script.js
-Glope-Logo.png
-glope-honey-premium.jpg
-glopeagro_qr.png
+Main mobile fixes:
+- Header now keeps logo on the left and Enquire + hamburger together on the right.
+- Hamburger is a clean 3-line icon instead of a text glyph.
+- Reduced excessive vertical whitespace throughout mobile.
+- Tightened hero, products, story, beliefs, people, Instagram and contact spacing.
+- Kept the desktop V12 design intact.
+- Story image remains full/no-crop.
+- Instagram section keeps QR only; no duplicate honey image.

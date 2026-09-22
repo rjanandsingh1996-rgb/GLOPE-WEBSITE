@@ -211,3 +211,496 @@ footer{background:#0e2a1c;color:#aebcb1;padding:25px 0}.footer{display:flex;just
     justify-content:flex-start;
   }
 }
+
+
+/* =========================
+   GLOPE V13 — MOBILE POLISH
+   Desktop layout remains unchanged.
+   ========================= */
+
+/* Tablet / mobile header */
+@media (max-width:850px){
+  .site-header{
+    height:70px;
+  }
+  .nav{
+    width:92%;
+    gap:10px;
+  }
+  .brand{
+    width:82px;
+    flex:0 0 82px;
+  }
+  .brand img{
+    width:82px;
+    height:60px;
+    object-fit:contain;
+  }
+  .nav-right{
+    margin-left:auto;
+    gap:10px;
+  }
+  .ig-icon{
+    font-size:21px;
+    width:25px;
+    text-align:center;
+  }
+  .enquire{
+    padding:11px 16px;
+    min-width:126px;
+    text-align:center;
+    font-size:11px;
+  }
+  .menu{
+    width:38px;
+    height:42px;
+    padding:0;
+    display:grid;
+    place-items:center;
+    font-size:0;
+  }
+  .menu::before{
+    content:"";
+    width:25px;
+    height:18px;
+    display:block;
+    background:
+      linear-gradient(var(--green),var(--green)) 0 0/25px 2px no-repeat,
+      linear-gradient(var(--green),var(--green)) 0 8px/25px 2px no-repeat,
+      linear-gradient(var(--green),var(--green)) 0 16px/25px 2px no-repeat;
+  }
+
+  /* tighter, less fragmented page rhythm */
+  .hero-copy{
+    padding:42px 0 8px;
+  }
+  .hero-intro{
+    margin:18px 0;
+  }
+  .hero-notes{
+    margin-top:23px;
+  }
+  .hero-visual{
+    height:350px;
+  }
+  .hero-image-wrap{
+    height:315px;
+    width:94%;
+  }
+  .hero-tag{
+    bottom:17px;
+  }
+
+  .trust-grid>div{
+    padding:14px 13px;
+  }
+
+  .section{
+    padding:58px 0;
+  }
+  .section-head{
+    margin-bottom:28px;
+  }
+  .section-head>p{
+    margin-top:0;
+  }
+  .product-copy{
+    padding:36px 28px 32px;
+  }
+  .product-copy h3{
+    font-size:40px;
+  }
+  .product-copy>p:not(.mini-label){
+    margin-top:8px;
+  }
+  .sizes{
+    margin:18px 0 8px;
+  }
+  .product-copy .btn{
+    margin-top:14px;
+  }
+  .product-image{
+    min-height:365px;
+  }
+  .product-photo{
+    width:300px;
+    height:300px;
+  }
+  .coming-soon{
+    margin-top:14px;
+    padding:22px 24px;
+  }
+
+  .story{
+    padding:58px 0 48px;
+  }
+  .story-top{
+    gap:28px;
+  }
+  .story-image{
+    width:100%;
+    aspect-ratio:1 / 1;
+  }
+  .story-copy h2{
+    margin-bottom:14px;
+  }
+  .story-copy p:not(.eyebrow){
+    margin:13px 0;
+    line-height:1.72;
+  }
+  .timeline{
+    margin-top:42px;
+  }
+  .timeline article{
+    min-height:0;
+    padding:20px 18px 20px;
+  }
+
+  .beliefs{
+    padding:58px 0;
+  }
+  .beliefs h2{
+    margin-bottom:28px;
+  }
+  .belief-grid article{
+    padding:25px 22px;
+    min-height:0;
+  }
+  .belief-grid article p{
+    margin-top:5px;
+    padding-top:4px;
+  }
+
+  .people-section{
+    padding:60px 0;
+  }
+  .people-head{
+    margin-bottom:32px;
+  }
+  .people-grid{
+    gap:14px;
+  }
+  .people-grid article{
+    min-height:0;
+    padding:30px 28px;
+  }
+  .people-grid article>span{
+    margin-top:17px;
+  }
+  .people-section blockquote{
+    margin-top:14px;
+    padding:24px 20px;
+    font-size:17px;
+    line-height:1.5;
+  }
+
+  .instagram{
+    padding:56px 0;
+  }
+  .insta-grid{
+    gap:24px;
+  }
+  .insta-copy h2{
+    font-size:42px;
+  }
+  .qr{
+    width:100%;
+    min-height:0;
+    padding:12px;
+  }
+
+  .contact{
+    padding:60px 0 50px;
+  }
+  .contact-grid{
+    gap:35px;
+  }
+  .contact-details a,
+  .contact-details>div{
+    padding:14px 0;
+  }
+
+  footer{
+    padding:22px 0;
+  }
+}
+
+/* Phone-specific: compact and visually continuous */
+@media (max-width:480px){
+  .topline{
+    height:28px;
+    padding:6px 4px;
+    font-size:5.5px;
+    letter-spacing:2px;
+  }
+  .site-header{
+    height:68px;
+  }
+  .nav{
+    width:92%;
+    gap:7px;
+  }
+  .brand{
+    width:78px;
+    flex-basis:78px;
+  }
+  .brand img{
+    width:78px;
+    height:58px;
+  }
+  .nav-right{
+    gap:7px;
+  }
+  .ig-icon{
+    width:22px;
+    font-size:19px;
+  }
+  .enquire{
+    min-width:0;
+    width:118px;
+    padding:11px 10px;
+  }
+  .menu{
+    width:32px;
+  }
+  .menu::before{
+    width:24px;
+    background:
+      linear-gradient(var(--green),var(--green)) 0 0/24px 2px no-repeat,
+      linear-gradient(var(--green),var(--green)) 0 8px/24px 2px no-repeat,
+      linear-gradient(var(--green),var(--green)) 0 16px/24px 2px no-repeat;
+  }
+
+  .hero-copy{
+    padding:34px 0 4px;
+  }
+  .hero h1{
+    font-size:48px;
+    line-height:.98;
+    letter-spacing:-1.7px;
+  }
+  .hero-intro{
+    font-size:14.5px;
+    line-height:1.65;
+    margin:17px 0;
+  }
+  .hero-cta{
+    gap:9px;
+  }
+  .hero-cta .btn{
+    width:100%;
+    padding:13px 18px;
+  }
+  .hero-notes{
+    margin-top:20px;
+    font-size:7.8px;
+  }
+  .hero-visual{
+    height:322px;
+  }
+  .hero-image-wrap{
+    height:285px;
+    width:94%;
+    border-width:5px;
+  }
+  .hero-tag{
+    bottom:12px;
+    left:7%;
+    padding:4px;
+    gap:4px;
+  }
+  .hero-tag span{
+    padding:5px 7px;
+    font-size:8px;
+  }
+
+  .trust-grid>div{
+    padding:12px 9px;
+    gap:9px;
+  }
+  .trust-grid b{
+    font-size:17px;
+  }
+  .trust-grid strong{
+    font-size:8.5px;
+  }
+  .trust-grid small{
+    font-size:7px;
+  }
+
+  .section{
+    padding:52px 0;
+  }
+  .section-head{
+    margin-bottom:24px;
+  }
+  .section-head h2,
+  .beliefs h2,
+  .people-head h2,
+  .contact h2{
+    font-size:43px;
+  }
+  .section-head>p{
+    font-size:12.5px;
+    line-height:1.65;
+  }
+  .product-feature{
+    min-height:0;
+  }
+  .product-copy{
+    padding:32px 25px 28px;
+  }
+  .product-copy h3{
+    font-size:38px;
+    line-height:1.05;
+  }
+  .product-copy>p:not(.mini-label){
+    font-size:13px;
+    line-height:1.7;
+  }
+  .sizes span{
+    padding:7px 12px;
+  }
+  .product-image{
+    min-height:330px;
+  }
+  .product-photo{
+    width:270px;
+    height:270px;
+    border-width:6px;
+  }
+  .coming-soon{
+    padding:21px 22px;
+  }
+  .coming-soon h3{
+    font-size:27px;
+  }
+  .coming-soon>p{
+    font-size:11px;
+    line-height:1.7;
+  }
+
+  .story{
+    padding:50px 0 42px;
+  }
+  .story-top{
+    gap:25px;
+  }
+  .story-image{
+    aspect-ratio:1 / 1;
+  }
+  .story-copy h2{
+    font-size:43px;
+    line-height:1.02;
+  }
+  .story-copy p:not(.eyebrow){
+    font-size:14px;
+    line-height:1.75;
+  }
+  .timeline{
+    grid-template-columns:1fr;
+    margin-top:34px;
+  }
+  .timeline article{
+    padding:18px 22px;
+  }
+  .timeline h3{
+    font-size:18px;
+  }
+
+  .beliefs{
+    padding:50px 0;
+  }
+  .beliefs h2{
+    font-size:42px;
+    line-height:1.04;
+  }
+  .belief-grid article{
+    padding:22px 22px;
+  }
+  .belief-grid b{
+    font-size:23px;
+  }
+  .belief-grid h3{
+    font-size:20px;
+  }
+  .belief-grid p{
+    font-size:11.5px;
+    line-height:1.65;
+  }
+
+  .people-section{
+    padding:52px 0;
+  }
+  .people-head{
+    gap:15px;
+    margin-bottom:27px;
+  }
+  .people-head>p{
+    font-size:12.5px;
+  }
+  .people-grid{
+    gap:12px;
+  }
+  .people-grid article{
+    padding:28px 24px;
+  }
+  .people-grid h3{
+    font-size:30px;
+  }
+  .people-grid article>p:not(.mini-label){
+    font-size:12.5px;
+    line-height:1.7;
+  }
+  .people-section blockquote{
+    font-size:16px;
+    padding:22px 18px;
+  }
+
+  .instagram{
+    padding:50px 0;
+  }
+  .insta-copy h2{
+    font-size:40px;
+  }
+  .insta-copy>p:not(.eyebrow){
+    font-size:12.5px;
+  }
+  .qr{
+    padding:10px;
+    gap:12px;
+  }
+  .qr img{
+    width:105px;
+    height:105px;
+  }
+
+  .contact{
+    padding:52px 0 42px;
+  }
+  .contact-grid{
+    gap:30px;
+  }
+  .contact-grid>div>p:not(.eyebrow){
+    font-size:13px;
+    line-height:1.7;
+  }
+  .contact-details a,
+  .contact-details>div{
+    grid-template-columns:62px 1fr;
+    gap:12px;
+    padding:13px 0;
+  }
+  .contact-details span{
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  .footer{
+    gap:9px;
+  }
+  .footer img{
+    width:68px;
+    height:48px;
+  }
+}
