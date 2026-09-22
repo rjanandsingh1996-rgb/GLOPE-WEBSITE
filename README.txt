@@ -1,12 +1,27 @@
-GLOPE Website V14
-==================
-Mobile hero refinement over V13.
+GLOPE WEBSITE — V15
+======================
 
-Changes:
-- Smaller, better-proportioned mobile header logo.
-- Removed the tiny Instagram icon from the mobile header.
-- Kept Enquire Now and hamburger aligned to the right.
-- Hero campaign image now displays as a complete square image instead of cropping the artwork.
-- Removed the floating 250g / 500g / 1kg pill from the hero because sizes are already shown in Products.
-- Reduced mobile hero visual spacing while preserving a premium editorial feel.
-- Desktop layout remains unchanged.
+This version is the final visual build using the available GLOPE assets.
+
+Included:
+- Responsive desktop + mobile layout
+- Cleaner mobile header: Logo | Enquire Now | Menu
+- 1 kg, 500 g and 250 g honey product cards
+- Farm/beekeeping section
+- Honey range visual
+- GLOPE story and timeline
+- No Fancy Advertisement / No Extra Claims section
+- Founder + family/product section
+- Instagram QR
+- Contact details and WhatsApp enquiry buttons
+
+GitHub:
+1. Open your GLOPE-WEBSITE repository.
+2. Replace index.html, style.css and script.js.
+3. Upload the complete images folder.
+4. Commit the changes.
+5. Cloudflare should deploy automatically.
+
+Important:
+The 500 g visual supplied for this version is the image you provided as the 500 g product photo.
+The 250 g visual is the image carrying the 250 g badge.

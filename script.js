@@ -1,1 +1,18 @@
-const menu=document.querySelector('.menu');const mobile=document.querySelector('.mobile-nav');if(menu&&mobile){menu.addEventListener('click',()=>mobile.classList.toggle('open'));document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>mobile.classList.remove('open')))}
+const menu = document.querySelector('.menu');
+const mobileNav = document.querySelector('.mobile-nav');
+
+if (menu && mobileNav) {
+  menu.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
