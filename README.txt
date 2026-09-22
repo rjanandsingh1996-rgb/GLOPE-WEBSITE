@@ -1,12 +1,12 @@
-GLOPE Website V13
+GLOPE Website V14
 ==================
-V13 is a mobile-first polish pass over V12.
+Mobile hero refinement over V13.
 
-Main mobile fixes:
-- Header now keeps logo on the left and Enquire + hamburger together on the right.
-- Hamburger is a clean 3-line icon instead of a text glyph.
-- Reduced excessive vertical whitespace throughout mobile.
-- Tightened hero, products, story, beliefs, people, Instagram and contact spacing.
-- Kept the desktop V12 design intact.
-- Story image remains full/no-crop.
-- Instagram section keeps QR only; no duplicate honey image.
+Changes:
+- Smaller, better-proportioned mobile header logo.
+- Removed the tiny Instagram icon from the mobile header.
+- Kept Enquire Now and hamburger aligned to the right.
+- Hero campaign image now displays as a complete square image instead of cropping the artwork.
+- Removed the floating 250g / 500g / 1kg pill from the hero because sizes are already shown in Products.
+- Reduced mobile hero visual spacing while preserving a premium editorial feel.
+- Desktop layout remains unchanged.

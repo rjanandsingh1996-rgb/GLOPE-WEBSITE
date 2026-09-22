@@ -704,3 +704,120 @@ footer{background:#0e2a1c;color:#aebcb1;padding:25px 0}.footer{display:flex;just
     height:48px;
   }
 }
+
+
+/* =========================
+   GLOPE V14 — MOBILE HERO REFINEMENT
+   ========================= */
+
+@media (max-width:850px){
+  /* Cleaner header: logo + enquiry + hamburger */
+  .brand,
+  .brand img{
+    width:72px;
+  }
+  .brand{
+    flex-basis:72px;
+  }
+  .brand img{
+    height:54px;
+  }
+  .ig-icon{
+    display:none;
+  }
+  .nav-right{
+    gap:9px;
+  }
+
+  /* Keep the campaign artwork complete instead of cropping its top/bottom */
+  .hero-visual{
+    height:auto;
+    min-height:0;
+    padding:8px 0 28px;
+  }
+  .hero-image-wrap{
+    width:min(92%, 390px);
+    height:auto;
+    aspect-ratio:1 / 1;
+    border-width:5px;
+    transform:none;
+  }
+  .hero-image-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    background:#efe2c7;
+  }
+
+  /* Sizes are already shown in the Products section.
+     Remove the floating pill from the hero so nothing sits on the artwork. */
+  .hero-tag{
+    display:none;
+  }
+
+  .image-caption{
+    padding:10px 13px;
+  }
+  .image-caption b{
+    font-size:8px;
+  }
+  .image-caption span{
+    font-size:8px;
+  }
+
+  .gold-orb.orb-one{
+    width:300px;
+    height:300px;
+    right:50%;
+    transform:translateX(50%);
+    top:7%;
+  }
+  .gold-orb.orb-two{
+    display:none;
+  }
+}
+
+@media (max-width:480px){
+  .site-header{
+    height:66px;
+  }
+  .nav{
+    width:92%;
+    gap:6px;
+  }
+  .brand,
+  .brand img{
+    width:70px;
+  }
+  .brand{
+    flex-basis:70px;
+  }
+  .brand img{
+    height:52px;
+  }
+  .enquire{
+    width:116px;
+    padding:11px 9px;
+  }
+  .menu{
+    width:31px;
+  }
+
+  .hero-copy{
+    padding:34px 0 0;
+  }
+  .hero-visual{
+    padding:5px 0 24px;
+  }
+  .hero-image-wrap{
+    width:min(91%, 370px);
+    border-width:5px;
+  }
+
+  /* A little more breathing room between the CTA notes and artwork,
+     without recreating the old large blank area. */
+  .hero-notes{
+    margin-bottom:4px;
+  }
+}
