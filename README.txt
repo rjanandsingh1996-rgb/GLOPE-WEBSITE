@@ -1,20 +1,19 @@
-GLOPE WEBSITE V11 — PREMIUM NATURAL FOOD BRAND REDESIGN
+GLOPE Website V12
+==================
+Premium editorial static website for GLOPE Agro Products — From Farm to Family.
 
-Visual direction:
-- warm ivory / parchment
-- forest green
-- honey gold
-- editorial serif typography
-- clean split hero with separate campaign photography
-- premium product presentation
-- unified story, philosophy, founder, Instagram and contact sections
+V12 refinements:
+- Repositioned 250 g / 500 g / 1 kg hero size badges so they do not overlap campaign artwork text.
+- Story image now uses contain/no-crop so the full campaign artwork remains visible.
+- Refined philosophy card rhythm and section transition.
+- Removed duplicate honey product image from Instagram/contact area; Instagram QR is now the visual focus.
+- Added small interaction refinements to contact links.
+- Responsive desktop/tablet/mobile layout retained.
 
-ROOT files:
+Files:
 index.html
 style.css
 script.js
 Glope-Logo.png
 glope-honey-premium.jpg
 glopeagro_qr.png
-
-Replace the existing ROOT files in GitHub and let Cloudflare deploy.

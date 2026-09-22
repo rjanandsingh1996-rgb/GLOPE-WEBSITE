@@ -28,3 +28,186 @@ footer{background:#0e2a1c;color:#aebcb1;padding:25px 0}.footer{display:flex;just
 @media(max-width:480px){
 .topline{font-size:6px}.hero-copy{padding-top:45px}.hero h1{font-size:48px;letter-spacing:-1.8px}.hero-intro{font-size:15px}.hero-cta{flex-direction:column}.hero-cta .btn{width:100%}.hero-notes{font-size:8px;gap:7px}.hero-visual{height:370px}.hero-image-wrap{height:315px;width:94%;border-width:6px}.image-caption{padding:9px 11px}.image-caption b{font-size:8px}.hero-tag{font-size:8px}.trust-grid>div{padding:14px 11px}.trust-grid b{font-size:18px}.trust-grid strong{font-size:9px}.trust-grid small{font-size:8px}.product-photo{width:280px;height:280px}.product-image{min-height:355px}.timeline{grid-template-columns:1fr}.timeline article{border-right:0!important}.insta-visual{align-items:flex-start;flex-direction:column}.mini-product{width:100%;height:180px}.qr{width:max-content}.contact-details a,.contact-details>div{grid-template-columns:68px 1fr}.footer>div:first-child{align-items:flex-start}
 }
+
+
+/* =========================
+   GLOPE V12 refinements
+   ========================= */
+
+/* Hero sizes: clear of the campaign headline, aligned beside the photo */
+.hero-tag{
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:8px;
+  border-radius:10px;
+  min-width:58px;
+  text-align:center;
+  background:rgba(255,253,247,.96);
+  border:1px solid #dccba8;
+  box-shadow:0 12px 26px rgba(81,58,27,.12);
+  font-size:9px;
+  line-height:1;
+}
+.hero-tag span{
+  display:block;
+  color:#5c4b36;
+  margin:0;
+  padding:7px 5px;
+  border:1px solid #eadfc8;
+  border-radius:6px;
+  background:#fffdf8;
+}
+.hero-tag span + span{
+  color:#9a6c14;
+}
+
+/* Story campaign artwork: show the complete image, never crop important text */
+.story-image{
+  height:auto;
+  aspect-ratio:1 / 1;
+  background:#f3e7ce;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.story-image:after{display:none}
+.story-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  filter:none;
+}
+
+/* Belief cards: equal, deliberate editorial rhythm */
+.belief-grid{
+  align-items:stretch;
+}
+.belief-grid article{
+  min-height:205px;
+  display:flex;
+  flex-direction:column;
+}
+.belief-grid article p{
+  margin-top:auto;
+  padding-top:14px;
+}
+
+/* Softer transition from the dark story into the warm belief section */
+.story{
+  padding-bottom:84px;
+}
+.beliefs{
+  border-top:1px solid rgba(183,123,20,.16);
+}
+
+/* Founder cards: a little more editorial breathing room */
+.people-grid article{
+  min-height:276px;
+}
+
+/* Instagram: QR is the only visual; no duplicate product photo */
+.insta-grid{
+  grid-template-columns:1fr auto;
+}
+.insta-visual{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.mini-product{
+  display:none;
+}
+.qr{
+  min-width:250px;
+  min-height:150px;
+  padding:14px;
+  gap:16px;
+  background:#fbf5e8;
+  border:1px solid #d3c09e;
+}
+.qr img{
+  width:118px;
+  height:118px;
+  object-fit:contain;
+}
+.qr div{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.qr strong{
+  font-size:10px;
+  color:#3e4a3f;
+}
+.qr span{
+  font-size:9px;
+  color:#6b604f;
+}
+
+/* Contact links feel intentional on desktop/mobile */
+.contact-details a{
+  transition:background .2s ease, padding-left .2s ease;
+}
+.contact-details a:hover{
+  background:rgba(255,255,255,.035);
+  padding-left:8px;
+}
+
+/* Mobile refinements */
+@media(max-width:850px){
+  .hero-tag{
+    top:auto;
+    left:5%;
+    bottom:28px;
+    transform:none;
+    flex-direction:row;
+    gap:5px;
+    min-width:0;
+    padding:5px;
+    border-radius:9px;
+  }
+  .hero-tag span{
+    padding:6px 8px;
+  }
+  .story-image{
+    aspect-ratio:1 / 1;
+    height:auto;
+  }
+  .people-grid article{
+    min-height:0;
+  }
+  .insta-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .insta-visual{
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:480px){
+  .hero-tag{
+    bottom:12px;
+    left:6%;
+    font-size:8px;
+  }
+  .hero-tag span{
+    padding:6px 7px;
+  }
+  .story-image{
+    aspect-ratio:1 / 1;
+  }
+  .belief-grid article{
+    min-height:0;
+  }
+  .qr{
+    width:100%;
+    min-width:0;
+    justify-content:flex-start;
+  }
+}
