@@ -446,16 +446,81 @@ html{scroll-padding-top:92px}
   .fssai-detail>img{width:76px;height:38px}
 }
 
-/* V19 bilingual switch — does not alter the existing English layout */
-.lang-switch{display:flex;align-items:center;gap:5px;margin-right:6px;font-size:10px;color:#8a7655;white-space:nowrap}
+/* V20 bilingual switch — visible directly in the header beside Enquire Now */
+.lang-switch{display:flex;align-items:center;gap:3px;margin-right:2px;font-size:10px;color:#8a7655;white-space:nowrap}
 .lang-switch span{opacity:.55}
 .lang-btn{border:0;background:transparent;padding:3px 4px;font:700 10px "DM Sans",sans-serif;color:#7a6c58;cursor:pointer}
 .lang-btn.active{color:var(--green);text-decoration:underline;text-underline-offset:3px}
-.mobile-lang{display:none}
 
 @media(max-width:850px){
-  .lang-switch{display:none}
-  .mobile-lang{display:flex;align-items:center;gap:9px;padding:10px 8px;border-bottom:1px solid #d9c9a755;font-size:10px;color:#756958}
-  .mobile-lang span{margin-right:auto}
-  .mobile-lang .lang-btn{font-size:10px}
+  .lang-switch{display:flex;margin-right:0;gap:1px}
+  .lang-switch .lang-btn{font-size:10px;padding:3px 2px}
+}
+
+/* =========================
+   V21 — Hindi typography & copy polish
+   Keep English layout untouched; these rules activate only in Hindi.
+   ========================= */
+html[lang="hi"] body{
+  font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;
+}
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] .hero h1,
+html[lang="hi"] .section-head h2,
+html[lang="hi"] .farm-copy h2,
+html[lang="hi"] .story-copy-only h2,
+html[lang="hi"] .beliefs h2,
+html[lang="hi"] .people-head h2,
+html[lang="hi"] .contact h2{
+  font-family:"Noto Serif Devanagari","Noto Serif",serif;
+  letter-spacing:0;
+  line-height:1.14;
+}
+html[lang="hi"] .eyebrow,
+html[lang="hi"] .mini-label{
+  font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;
+  letter-spacing:1px;
+  line-height:1.5;
+}
+html[lang="hi"] p,
+html[lang="hi"] .hero-intro,
+html[lang="hi"] .farm-copy p:not(.eyebrow),
+html[lang="hi"] .story-copy-only p:not(.eyebrow),
+html[lang="hi"] .timeline p,
+html[lang="hi"] .belief-grid p,
+html[lang="hi"] .people-grid article>p:not(.mini-label),
+html[lang="hi"] .contact> .wrap>div>p:not(.eyebrow){
+  font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;
+}
+html[lang="hi"] .hero h1{line-height:1.03;}
+html[lang="hi"] .story-copy-only p:not(.eyebrow){line-height:1.95;}
+html[lang="hi"] .timeline h3,
+html[lang="hi"] .belief-grid h3,
+html[lang="hi"] .people-grid h3{letter-spacing:0;line-height:1.35;}
+
+@media(max-width:850px){
+  html[lang="hi"] .section-head h2,
+  html[lang="hi"] .people-head h2,
+  html[lang="hi"] .farm-copy h2,
+  html[lang="hi"] .story-copy-only h2,
+  html[lang="hi"] .beliefs h2,
+  html[lang="hi"] .contact h2{font-size:40px;line-height:1.16;}
+  html[lang="hi"] .story-copy-only p:not(.eyebrow){font-size:14px;line-height:1.95;}
+  html[lang="hi"] .timeline h3{font-size:21px;}
+  html[lang="hi"] .belief-grid h3{font-size:21px;}
+  html[lang="hi"] .people-grid h3{font-size:30px;}
+}
+@media(max-width:480px){
+  html[lang="hi"] .section-head h2,
+  html[lang="hi"] .people-head h2,
+  html[lang="hi"] .farm-copy h2,
+  html[lang="hi"] .story-copy-only h2,
+  html[lang="hi"] .beliefs h2,
+  html[lang="hi"] .contact h2{font-size:38px;line-height:1.17;}
+  html[lang="hi"] .hero h1{font-size:49px;line-height:1.05;}
+  html[lang="hi"] .eyebrow,
+  html[lang="hi"] .mini-label{letter-spacing:.6px;}
+  html[lang="hi"] .story-copy-only p:not(.eyebrow){font-size:13.5px;line-height:2;}
 }
