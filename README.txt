@@ -1,31 +1,25 @@
-GLOPE Website V17 — includes the supplied FSSAI logo in the contact/FSSAI section.
+GLOPE WEBSITE — V18
+===================
 
-GLOPE WEBSITE — V15
-======================
+V18 is the refined desktop + mobile build based on the complete V17 page review.
 
-This version is the final visual build using the available GLOPE assets.
+Main refinements:
+- Reduced excessive desktop whitespace between major sections.
+- Better vertical balance in the Honey Range banner.
+- Tighter Products, Ghee Coming Soon, Farm, Story, Beliefs and Founder sections.
+- Sticky-header anchor spacing improved so section headings are not hidden.
+- Mobile layout preserved and only lightly tightened where needed.
+- FSSAI logo added to the first trust strip in place of plain FSSAI text.
+- FSSAI logo made clearer and properly aligned in the Contact section.
+- Founder + Science/Technology content retained.
+- Existing real GLOPE product, farm, founder, QR and logo images retained.
 
-Included:
-- Responsive desktop + mobile layout
-- Cleaner mobile header: Logo | Enquire Now | Menu
-- 1 kg, 500 g and 250 g honey product cards
-- Farm/beekeeping section
-- Honey range visual
-- GLOPE story and timeline
-- No Fancy Advertisement / No Extra Claims section
-- Founder + family/product section
-- Instagram QR
-- Contact details and WhatsApp enquiry buttons
-
-GitHub:
-1. Open your GLOPE-WEBSITE repository.
-2. Replace index.html, style.css and script.js.
-3. Upload the complete images folder.
-4. Commit the changes.
-5. Cloudflare should deploy automatically.
+GitHub upload:
+1. Replace index.html, style.css and script.js.
+2. Replace/upload the complete images folder.
+3. Commit changes.
+4. Cloudflare should redeploy automatically.
 
 Important:
-The 500 g visual supplied for this version is the image you provided as the 500 g product photo.
-The 250 g visual is the image carrying the 250 g badge.
-
-V16: mobile product cards now image-first stacked layout; founder Ashish Singh photo added in Behind GLOPE. Upload images/founder-ashish.jpg along with updated index.html and style.css.
+Use the supplied FSSAI logo file: images/fssai-logo.png
+License number shown: 22724113001721

@@ -353,23 +353,95 @@ footer{background:#0b2f20}
   }
 }
 
-/* V17 refinement: keep the three desktop product cards visually aligned. */
-@media(min-width:1051px){
-  .product-grid{align-items:stretch}
-  .product-card{display:flex;flex-direction:column}
-  .product-card .product-photo,
-  .product-card.featured .product-photo{
-    height:360px;
-    min-height:360px;
-    aspect-ratio:auto;
-  }
-  .product-card .product-photo img,
-  .product-card.featured .product-photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-  }
-  .product-card-copy{flex:1;display:flex;flex-direction:column}
-  .product-card-copy .text-link{margin-top:auto;padding-top:8px}
+/* =========================
+   GLOPE V18 — refined desktop spacing + responsive polish
+   ========================= */
+html{scroll-padding-top:92px}
+[id]{scroll-margin-top:92px}
+
+/* Keep the desktop page compact and intentional. */
+@media(min-width:851px){
+  .hero{min-height:590px}
+  .hero-grid{min-height:590px}
+  .hero-copy{padding:42px 0}
+  .hero-visual{min-height:520px}
+  .hero-image-wrap{width:min(520px,100%)}
+
+  .section{padding:72px 0 64px}
+  .section-head{margin-bottom:34px}
+  .section-head>p{margin-bottom:2px}
+  .product-grid{gap:14px}
+  .product-card-copy{padding:25px 27px 27px}
+  .product-card-copy>p:not(.mini-label){margin:13px 0}
+
+  .range-strip{margin-top:16px;min-height:285px;grid-template-columns:.78fr 1.22fr}
+  .range-strip>div{padding:36px 42px;display:flex;flex-direction:column;justify-content:center}
+  .range-strip h3{font-size:33px;max-width:390px}
+  .range-strip img{min-height:285px;object-fit:cover}
+
+  .coming-soon{margin-top:14px;padding:28px 34px}
+  .products.section{padding-bottom:50px}
+
+  .farm-section{padding:72px 0}
+  .farm-grid{gap:58px}
+  .farm-copy{max-width:540px}
+
+  .story{padding-bottom:62px}
+  .story-copy-only{padding-top:10px}
+  .timeline{margin-top:52px}
+
+  .beliefs{padding:72px 0}
+  .beliefs h2{margin-bottom:38px}
+  .belief-grid article{padding:32px 28px 34px}
+
+  .people-section{padding:72px 0}
+  .people-head{margin-bottom:34px}
+  .people-grid{gap:16px}
+  .people-grid article{padding:34px 38px}
+  .founder-copy{padding:31px 30px}
+  .people-section blockquote{margin-top:16px;padding:24px 38px}
+
+  .instagram{padding:58px 0}
+  .contact{padding:72px 0 58px}
+}
+
+/* FSSAI presentation: recognizable on the first trust strip and clean in contact. */
+.trust-fssai strong{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.trust-fssai strong img{width:66px;height:31px;object-fit:contain;object-position:left center}
+.trust-fssai strong small{margin-top:0}
+
+.fssai-detail{display:grid!important;grid-template-columns:90px 1fr auto!important;align-items:center;gap:18px!important}
+.fssai-detail .fssai-text{display:contents}
+.fssai-detail>img{width:92px;height:45px;object-fit:contain;object-position:center}
+
+/* Prevent the founder heading from hiding underneath the sticky header. */
+.people-section,.products,.farm-section,.story,.beliefs,.instagram,.contact{overflow:clip}
+
+@media(max-width:850px){
+  html{scroll-padding-top:78px}
+  [id]{scroll-margin-top:78px}
+  .section{padding:60px 0 52px}
+  .products.section{padding-top:52px;padding-bottom:45px}
+  .range-strip>div{display:flex;flex-direction:column;justify-content:center}
+  .farm-section{padding:58px 0}
+  .story{padding-bottom:52px}
+  .timeline{margin-top:40px}
+  .beliefs{padding:58px 0}
+  .people-section{padding:58px 0}
+  .instagram{padding:48px 0}
+  .contact{padding:58px 0 45px}
+
+  .trust-fssai strong img{width:58px;height:28px}
+  .fssai-detail{grid-template-columns:70px 1fr!important;gap:10px!important}
+  .fssai-detail>img{grid-column:2;width:82px;height:40px;justify-self:start;margin-top:4px}
+}
+
+@media(max-width:480px){
+  .section{padding:52px 0 46px}
+  .products.section{padding-top:46px;padding-bottom:42px}
+  .range-strip{margin-top:12px}
+  .range-strip>div{padding:25px 22px}
+  .coming-soon{margin-top:12px}
+  .trust-fssai strong img{width:54px;height:26px}
+  .fssai-detail>img{width:76px;height:38px}
 }
