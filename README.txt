@@ -25,3 +25,5 @@ GitHub:
 Important:
 The 500 g visual supplied for this version is the image you provided as the 500 g product photo.
 The 250 g visual is the image carrying the 250 g badge.
+
+V16: mobile product cards now image-first stacked layout; founder Ashish Singh photo added in Behind GLOPE. Upload images/founder-ashish.jpg along with updated index.html and style.css.

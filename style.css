@@ -282,3 +282,37 @@ footer{background:#0b2f20}
   .contact{padding:58px 0 45px}
   .footer img{width:72px;height:52px}
 }
+
+/* V16: product cards are stacked on touch/tablet widths, not squeezed into columns. */
+.founder-card{padding:0!important;overflow:hidden;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);align-items:stretch}
+.founder-portrait{width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center 26%;display:block}
+.founder-copy{padding:35px 30px;align-self:center}
+.founder-copy>p:not(.mini-label){font-size:13px;line-height:1.8;color:#6f6456}
+.founder-copy>span{font-size:9px;letter-spacing:1.2px;color:#a56e0d;font-weight:800}
+@media(max-width:1050px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+  .product-card.featured .product-photo{aspect-ratio:auto;min-height:340px}
+  .product-card.featured .product-photo img{height:100%;object-fit:contain;background:#f2e4bc}
+  .product-card.featured .product-card-copy{align-self:center}
+  .people-grid{grid-template-columns:1fr}
+}
+@media(max-width:850px){
+  .product-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .product-card,.product-card.featured{display:flex;flex-direction:column;grid-column:auto}
+  .product-card .product-photo,.product-card.featured .product-photo{width:100%;aspect-ratio:auto;min-height:0;overflow:hidden;background:#f2e4bc}
+  .product-card .product-photo img,.product-card.featured .product-photo img{width:100%;height:auto;display:block;object-fit:contain}
+  .product-card-copy{padding:24px!important}
+  .product-card h3{font-size:clamp(28px,7vw,38px)}
+  .product-card-copy>p:not(.mini-label),.product-card.featured .product-card-copy>p:not(.mini-label){font-size:14px;line-height:1.7;max-width:54ch}
+  .founder-card{grid-template-columns:1fr}
+  .founder-portrait{height:auto;min-height:0;max-height:420px;aspect-ratio:4/3;object-fit:cover;object-position:center 25%}
+  .founder-copy{padding:27px 24px}
+}
+@media(max-width:480px){
+  .products.section{padding-top:45px}
+  .products .section-head{margin-bottom:24px}
+  .product-card-copy{padding:21px!important}
+  .product-card .product-photo img{max-height:none}
+  .founder-portrait{aspect-ratio:4/3}
+}
