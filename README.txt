@@ -1,3 +1,5 @@
+GLOPE Website V17 — includes the supplied FSSAI logo in the contact/FSSAI section.
+
 GLOPE WEBSITE — V15
 ======================
 
