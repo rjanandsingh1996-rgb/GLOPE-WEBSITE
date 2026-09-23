@@ -445,3 +445,17 @@ html{scroll-padding-top:92px}
   .trust-fssai strong img{width:54px;height:26px}
   .fssai-detail>img{width:76px;height:38px}
 }
+
+/* V19 bilingual switch — does not alter the existing English layout */
+.lang-switch{display:flex;align-items:center;gap:5px;margin-right:6px;font-size:10px;color:#8a7655;white-space:nowrap}
+.lang-switch span{opacity:.55}
+.lang-btn{border:0;background:transparent;padding:3px 4px;font:700 10px "DM Sans",sans-serif;color:#7a6c58;cursor:pointer}
+.lang-btn.active{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.mobile-lang{display:none}
+
+@media(max-width:850px){
+  .lang-switch{display:none}
+  .mobile-lang{display:flex;align-items:center;gap:9px;padding:10px 8px;border-bottom:1px solid #d9c9a755;font-size:10px;color:#756958}
+  .mobile-lang span{margin-right:auto}
+  .mobile-lang .lang-btn{font-size:10px}
+}
