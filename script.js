@@ -1,3 +1,14 @@
+// Keep the website at the top when it is opened/reloaded without a section hash.
+// This prevents the browser from restoring the previous scroll position (e.g. the Story section).
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!window.location.hash) {
+  window.scrollTo(0, 0);
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 50);
+  }, { once: true });
+}
+
 const menu = document.querySelector('.menu');
 const mobileNav = document.querySelector('.mobile-nav');
 
