@@ -33,7 +33,7 @@ const translations = {
     heroEyebrow:'GLOPE कृषि उत्पाद • आगरा',
     heroTitle:'खेत से<br><em>परिवार तक।</em>',
     heroIntro:'रोज़मर्रा के पारिवारिक उपयोग के लिए सोच-समझकर प्रस्तुत किए गए कृषि उत्पाद — शुरुआत GLOPE Honey से।',
-    exploreHoney:'Honey देखें <span>→</span>', whatsappUs:'WhatsApp करें <span>↗</span>',
+    exploreHoney:'Honey देखें <span>→</span>', whatsappUs:'WhatsApp करें <span>↗</span>', buyNow:'खरीदें <span>→</span>',
     thoughtfulSourcing:'स्रोत पर ध्यान', familyFirst:'परिवार सबसे पहले',
     trust1:'परिवार द्वारा संचालित<small>सीधी भागीदारी</small>',
     trust2:'साफ़ और सरल<small>बिना अनावश्यक दावों के</small>',

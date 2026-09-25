@@ -524,3 +524,10 @@ html[lang="hi"] .people-grid h3{letter-spacing:0;line-height:1.35;}
   html[lang="hi"] .mini-label{letter-spacing:.6px;}
   html[lang="hi"] .story-copy-only p:not(.eyebrow){font-size:13.5px;line-height:2;}
 }
+
+/* V23: direct WhatsApp purchase actions and product pricing */
+.product-price{font-size:25px;font-weight:800;line-height:1.1;color:var(--green);margin:8px 0 12px}
+.buy-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:1.2px;padding:13px 18px;margin-top:5px;border:1px solid var(--green);transition:transform .2s ease,background .2s ease}
+.buy-btn:hover{transform:translateY(-1px);background:#173d2b}
+.grievance span{color:#f0dfbf}
+@media(max-width:700px){.product-price{font-size:24px}.buy-btn{width:100%;padding:14px 16px}.contact-details>a,.contact-details>div{grid-template-columns:115px 1fr}}
