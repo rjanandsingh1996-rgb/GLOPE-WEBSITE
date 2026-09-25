@@ -584,26 +584,9 @@ html[lang="hi"] .details-list span,html[lang="hi"] .details-list strong{font-fam
 }
 
 /* V25 — simple WhatsApp ordering flow */
-.how-order{margin-top:22px;padding:48px 40px;background:#fbf7ee;border:1px solid var(--line);display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:start}
-.how-order-head h3{font-size:34px;line-height:1.08;color:var(--green);margin:7px 0 14px}
-.how-order-head h3 em{font-style:normal;color:var(--gold)}
-.how-order-head>p:last-child{font-size:12px;line-height:1.8;color:#756958;max-width:390px}
-.order-steps{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.order-steps article{padding:24px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:150px}
-.order-steps b{font-size:11px;letter-spacing:2px;color:var(--gold)}
-.order-steps h4{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--green);margin:10px 0 8px}
-.order-steps p{font-size:11px;line-height:1.7;color:#756958;margin:0}
-html[lang="hi"] .how-order-head h3{font-family:"Noto Serif Devanagari","Noto Serif",serif;letter-spacing:0;line-height:1.18}
-html[lang="hi"] .order-steps h4{font-family:"Noto Serif Devanagari","Noto Serif",serif;letter-spacing:0}
 @media(max-width:900px){
-  .how-order{grid-template-columns:1fr;gap:26px;padding:34px 28px}
 }
 @media(max-width:600px){
-  .how-order{margin-top:14px;padding:30px 20px}
-  .how-order-head h3{font-size:30px}
-  .order-steps{grid-template-columns:1fr}
-  .order-steps article{min-height:0;padding:21px 18px}
-  .order-steps h4{font-size:19px}
 }
 
 /* V26 — premium footer */
