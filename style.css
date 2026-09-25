@@ -631,3 +631,27 @@ footer{background:#0b2f20;color:#d8e0d9}
   .footer-bottom span:last-child{text-align:left}
 }
 html[lang="hi"] .footer-brand p{font-family:"Noto Serif Devanagari","Noto Serif",serif}
+
+
+/* V27 — FAQ */
+.faq-section{padding:92px 0 104px;background:#f5ecd8}
+.faq-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:44px}
+.faq-head h2{font-family:Georgia,"Times New Roman",serif;font-size:54px;line-height:.98;color:#0b2f20;margin:10px 0 0}
+.faq-head h2 em{font-style:normal;color:#c78b18}
+.faq-head>p{max-width:470px;margin:0 0 5px;font-size:14px;line-height:1.8;color:#6d655a}
+.faq-list{border-top:1px solid #d8c6a4}
+.faq-list details{border-bottom:1px solid #d8c6a4}
+.faq-list summary{list-style:none;cursor:pointer;padding:22px 48px 22px 0;position:relative;font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;color:#0b2f20}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:'+';position:absolute;right:8px;top:16px;font-family:Arial,sans-serif;font-size:25px;font-weight:400;color:#c78b18}
+.faq-list details[open] summary::after{content:'−'}
+.faq-list details p{max-width:820px;margin:0;padding:0 55px 24px 0;font-size:13px;line-height:1.8;color:#6d655a}
+@media(max-width:800px){
+  .faq-section{padding:68px 0 76px}
+  .faq-head{grid-template-columns:1fr;gap:18px;margin-bottom:30px}
+  .faq-head h2{font-size:42px}
+  .faq-head>p{margin:0}
+  .faq-list summary{font-size:18px;padding:19px 38px 19px 0}
+  .faq-list details p{padding:0 30px 21px 0}
+}
+html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagari",Georgia,"Times New Roman",serif}

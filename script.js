@@ -95,7 +95,15 @@ const translations = {
     footerBrandNote:'सोच-समझकर प्रस्तुत। ईमानदारी से पेश किया गया।',
     footerExplore:'एक नज़र में', footerHome:'होम', footerProducts:'हमारे उत्पाद', footerStory:'हमारी कहानी', footerQuality:'हमारी सोच',
     footerConnect:'जुड़ें', footerWhatsapp:'WhatsApp', footerPresence:'GLOPE', footerLocation:'आगरा, उत्तर प्रदेश, भारत', footerTaglineShort:'खेत से परिवार तक।',
-    footerRights:'सर्वाधिकार सुरक्षित।', footerNote:'जेन्युइन उत्पाद। ईमानदार काम।'
+    footerRights:'सर्वाधिकार सुरक्षित।', footerNote:'जेन्युइन उत्पाद। ईमानदार काम।',
+    faqEyebrow:'सामान्य सवाल', faqTitle:'सरल जवाब।<br><em>कोई भ्रम नहीं।</em>', faqIntro:'GLOPE Honey, ऑर्डर और हमारे काम करने के तरीके से जुड़े कुछ उपयोगी जवाब।',
+    faq1Q:'GLOPE Honey का ऑर्डर कैसे करें?', faq1A:'अपना पैक चुनें और BUY NOW दबाएँ। WhatsApp पर उत्पाद और कीमत के साथ ऑर्डर की जानकारी खुल जाएगी। ऑर्डर की पुष्टि के लिए अपना नाम, पूरा डिलीवरी पता और पिनकोड साझा करें।',
+    faq2Q:'कौन-कौन से पैक आकार उपलब्ध हैं?', faq2A:'GLOPE Honey अभी 250 g, 500 g और 1 kg पैक में उपलब्ध है।',
+    faq3Q:'वर्तमान कीमतें क्या हैं?', faq3A:'250 g — ₹150 · 500 g — ₹300 · 1 kg — ₹600।',
+    faq4Q:'शहद को कैसे रखें?', faq4A:'इसे ठंडी और सूखी जगह पर रखें और इस्तेमाल के बाद पैक को अच्छी तरह बंद रखें।',
+    faq5Q:'GLOPE से संपर्क कैसे करें?', faq5A:'Product enquiries और orders के लिए WhatsApp पर +91 72538 77546 पर संपर्क करें। आप glopeenterprises1@gmail.com पर email भी कर सकते हैं।',
+    faq6Q:'क्या GLOPE Ghee उपलब्ध है?', faq6A:'GLOPE Ghee भविष्य के उत्पाद के रूप में planned है और अभी Coming Soon है।',
+    footerFaq:'सामान्य सवाल'
   }
 };
 
