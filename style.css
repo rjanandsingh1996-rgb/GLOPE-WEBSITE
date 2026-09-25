@@ -673,3 +673,23 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .founder-photo-label{left:18px;right:18px;bottom:16px}
   .founder-copy blockquote{font-size:15px}
 }
+
+/* V30: Refined founder layout for laptop/desktop
+   Keeps the founder story prominent without creating a tall split-card or empty side column. */
+@media (min-width:1051px){
+  .people-grid{grid-template-columns:1fr;gap:18px}
+  .founder-card{grid-column:1;grid-template-columns:minmax(0,40%) minmax(0,60%);min-height:410px}
+  .founder-visual{min-height:410px}
+  .founder-portrait{min-height:410px;object-position:center 20%}
+  .founder-copy{padding:42px 52px;max-width:720px}
+  .founder-copy h3{font-size:clamp(44px,3.5vw,56px)}
+  .founder-copy .founder-lead{font-size:18px!important;line-height:1.5}
+  .founder-copy>p:not(.mini-label):not(.founder-role):not(.founder-lead){font-size:13px;line-height:1.75;margin-bottom:16px}
+  .founder-copy blockquote{margin:18px 0 18px;padding:13px 0 13px 18px;font-size:15px}
+
+  .people-grid>article:not(.founder-card){display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr);column-gap:46px;align-items:center;padding:30px 42px;min-height:145px}
+  .people-grid>article:not(.founder-card) .mini-label{grid-column:1;grid-row:1}
+  .people-grid>article:not(.founder-card) h3{grid-column:1;grid-row:2;margin:7px 0 0}
+  .people-grid>article:not(.founder-card)>p:not(.mini-label){grid-column:2;grid-row:1 / span 3;margin:0}
+  .people-grid>article:not(.founder-card)>span{grid-column:1;grid-row:3;margin-top:10px}
+}
