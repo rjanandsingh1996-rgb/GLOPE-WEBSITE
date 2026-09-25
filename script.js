@@ -91,7 +91,11 @@ const translations = {
     openInstagram:'Instagram खोलें →', scanVisit:'Instagram देखने के लिए scan करें',
     contactEyebrow:'संपर्क करें', contactTitle:'GLOPE को<br><em>घर तक लाएँ।</em>',
     contactDesc:'Product enquiries, availability या business conversations के लिए सीधे हमसे बात करें।',
-    footerTagline:'खेत से परिवार तक।'
+    footerTagline:'खेत से परिवार तक।',
+    footerBrandNote:'सोच-समझकर प्रस्तुत। ईमानदारी से पेश किया गया।',
+    footerExplore:'एक नज़र में', footerHome:'होम', footerProducts:'हमारे उत्पाद', footerStory:'हमारी कहानी', footerQuality:'हमारी सोच',
+    footerConnect:'जुड़ें', footerWhatsapp:'WhatsApp', footerPresence:'GLOPE', footerLocation:'आगरा, उत्तर प्रदेश, भारत', footerTaglineShort:'खेत से परिवार तक।',
+    footerRights:'सर्वाधिकार सुरक्षित।', footerNote:'जेन्युइन उत्पाद। ईमानदार काम।'
   }
 };
 
