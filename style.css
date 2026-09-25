@@ -572,3 +572,13 @@ html[lang="hi"] .people-grid h3{letter-spacing:0;line-height:1.35;}
 html[lang="hi"] .why-grid h3{letter-spacing:0;line-height:1.35}
 html[lang="hi"] .product-details-copy h3{font-family:"Noto Serif Devanagari","Noto Serif",serif;letter-spacing:0;line-height:1.16}
 html[lang="hi"] .details-list span,html[lang="hi"] .details-list strong{font-family:"Noto Sans Devanagari","Noto Sans",sans-serif}
+
+/* V24 refinement — tighter desktop spacing and stronger WHY GLOPE hierarchy */
+@media (min-width: 901px){
+  .why-glope{padding:56px 0 68px}
+  .why-head{margin-bottom:38px}
+  .why-head .eyebrow{font-size:12px;font-weight:700;letter-spacing:4px;margin-bottom:10px}
+  .why-head h2{font-size:clamp(60px,6.1vw,86px);line-height:.94;letter-spacing:-2.8px}
+  .why-head>p{font-size:15px;line-height:1.75;max-width:620px}
+  .why-grid article{padding:28px 30px}
+}
