@@ -713,3 +713,11 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .founder-card{grid-template-columns:1fr;}
   .founder-portrait{min-height:0;height:auto;aspect-ratio:4/3;object-position:center 25%;}
 }
+
+
+/* Phase 1: accessibility + motion safety */
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
