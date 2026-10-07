@@ -785,3 +785,41 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
     font-size:14px;
   }
 }
+
+
+/* Phase 6 — legal/business footer links */
+.footer-legal-links{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;padding:16px 0 22px;border-top:1px solid var(--line);font-size:11px}
+.footer-legal-links a{color:var(--muted);text-decoration:none}
+.footer-legal-links a:hover,.footer-legal-links a:focus-visible{color:var(--green);text-decoration:underline}
+@media(max-width:700px){.footer-legal-links{gap:10px 15px;text-align:center}}
+
+
+/* Phase 6 — order/payment transparency */
+.order-info-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin:0 0 18px;
+  background:var(--green);
+  color:#fff;
+  border:1px solid var(--green2);
+}
+.order-info-strip span{
+  padding:13px 15px;
+  text-align:center;
+  font-size:10px;
+  line-height:1.4;
+  font-weight:700;
+  letter-spacing:.35px;
+  border-right:1px solid #ffffff2b;
+}
+.order-info-strip span:last-child{border-right:0}
+@media(max-width:850px){
+  .order-info-strip{grid-template-columns:repeat(2,1fr)}
+  .order-info-strip span:nth-child(2){border-right:0}
+  .order-info-strip span:nth-child(-n+2){border-bottom:1px solid #ffffff2b}
+}
+@media(max-width:480px){
+  .order-info-strip{grid-template-columns:1fr}
+  .order-info-strip span{border-right:0;border-bottom:1px solid #ffffff2b}
+  .order-info-strip span:last-child{border-bottom:0}
+}

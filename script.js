@@ -95,10 +95,14 @@ const translations = {
     faq1Q:'GLOPE Honey का ऑर्डर कैसे करें?', faq1A:'अपना पैक चुनें और BUY NOW दबाएँ। WhatsApp पर उत्पाद और कीमत के साथ ऑर्डर की जानकारी खुल जाएगी। ऑर्डर की पुष्टि के लिए अपना नाम, पूरा डिलीवरी पता और पिनकोड साझा करें।',
     faq2Q:'कौन-कौन से पैक आकार उपलब्ध हैं?', faq2A:'GLOPE Honey अभी 250 g, 500 g और 1 kg पैक में उपलब्ध है।',
     faq3Q:'वर्तमान कीमतें क्या हैं?', faq3A:'250 g — ₹139 · 500 g — ₹279 · 1 kg — ₹549।',
+    orderPayment:'COD · UPI · Bank Transfer', orderShipping:'₹999 से कम पर ₹50 shipping', orderFreeShipping:'₹999+ पर FREE shipping', orderConfirm:'डिस्पैच से पहले अंतिम राशि की पुष्टि',
+    faqShippingQ:'शिपिंग शुल्क कितना है?', faqShippingA:'₹999 से कम के ऑर्डर पर ₹50 shipping लागू है। ₹999 या उससे अधिक के ऑर्डर पर shipping FREE है।',
+    faqPaymentQ:'कौन-कौन से payment methods उपलब्ध हैं?', faqPaymentA:'COD, UPI और bank transfer उपलब्ध हैं, order confirmation के अधीन। डिस्पैच से पहले GLOPE अंतिम राशि की पुष्टि करेगा।',
+    faqRefundQ:'अगर शहद leaking या defective आए तो क्या करें?', faqRefundA:'जितनी जल्दी संभव हो स्पष्ट photo/video proof साझा करें। Verification के बाद GLOPE प्रभावित product/order का full refund देगा।',
     faq4Q:'शहद को कैसे रखें?', faq4A:'इसे ठंडी और सूखी जगह पर रखें और इस्तेमाल के बाद पैक को अच्छी तरह बंद रखें।',
     
     faq6Q:'क्या GLOPE Ghee उपलब्ध है?', faq6A:'GLOPE Ghee भविष्य के उत्पाद के रूप में planned है और अभी Coming Soon है।',
-    footerFaq:'सामान्य सवाल'
+    footerFaq:'सामान्य सवाल', footerPrivacy:'गोपनीयता नीति', footerTerms:'नियम व शर्तें', footerShipping:'शिपिंग नीति', footerReturns:'रिटर्न और रिफंड', footerCancellation:'रद्द करने की नीति', footerGrievance:'शिकायत / शिकायत निवारण'
   }
 };
 
