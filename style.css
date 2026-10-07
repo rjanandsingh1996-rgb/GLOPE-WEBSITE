@@ -1035,7 +1035,7 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   }
 }
 @media(max-width:480px){
-  body{padding-bottom:68px}
+  body.has-mobile-buy-bar{padding-bottom:68px}
   .mobile-buy-bar{
     position:fixed;
     left:10px;
@@ -1045,39 +1045,44 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:12px;
-    padding:10px 11px 10px 14px;
+    gap:10px;
+    padding:8px 9px 8px 12px;
+    min-height:54px;
     background:rgba(11,47,32,.97);
     border:1px solid #ffffff22;
-    box-shadow:0 8px 28px rgba(0,0,0,.16);
+    box-shadow:0 8px 24px rgba(0,0,0,.15);
   }
   .mobile-buy-bar span{
     min-width:0;
     display:flex;
     flex-direction:column;
-    gap:2px;
+    gap:1px;
   }
   .mobile-buy-bar b{
     color:#fff;
     font-size:10px;
-    letter-spacing:.5px;
+    letter-spacing:.4px;
+    line-height:1.2;
   }
   .mobile-buy-bar small{
     color:#d8e0d9;
     font-size:8px;
+    line-height:1.2;
   }
   .mobile-buy-bar a{
     flex:0 0 auto;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    min-height:38px;
-    padding:0 15px;
+    min-height:36px;
+    padding:0 14px;
     background:var(--gold);
     color:#163b2b;
-    font-size:10px;
+    font-size:9.5px;
     font-weight:900;
-    letter-spacing:.5px;
+    letter-spacing:.45px;
     text-decoration:none;
+    white-space:nowrap;
   }
+  .mobile-buy-bar.is-visible{display:flex}
 }
