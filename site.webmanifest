@@ -1,0 +1,16 @@
+{
+  "name": "GLOPE Agro Products",
+  "short_name": "GLOPE",
+  "description": "GLOPE Agro Products — From Farm to Family.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf5e8",
+  "theme_color": "#123f2b",
+  "icons": [
+    {
+      "src": "images/logo.png?v=2",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
