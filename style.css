@@ -819,9 +819,23 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .order-info-strip span:nth-child(-n+2){border-bottom:1px solid #ffffff2b}
 }
 @media(max-width:480px){
-  .order-info-strip{grid-template-columns:1fr}
-  .order-info-strip span{border-right:0;border-bottom:1px solid #ffffff2b}
-  .order-info-strip span:last-child{border-bottom:0}
+  .order-info-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    margin-bottom:18px;
+  }
+  .order-info-strip span{
+    min-height:68px;
+    padding:14px 9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    line-height:1.35;
+    border-right:1px solid #ffffff2b;
+    border-bottom:1px solid #ffffff2b;
+  }
+  .order-info-strip span:nth-child(2n){border-right:0}
+  .order-info-strip span:nth-child(n+3){border-bottom:0}
 }
 
 
@@ -832,6 +846,7 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   border:1px solid var(--line);
   background:rgba(255,253,247,.72);
 }
+.mobile-policy-link{display:none}
 .policy-quick-title{
   margin:0 0 11px;
   font-size:9px;
@@ -887,13 +902,41 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .footer-policies a{font-size:12px}
 }
 @media(max-width:480px){
-  .policy-quick-grid{grid-template-columns:1fr}
+  .order-info-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .policy-quick-links{
+    margin:18px 0 28px;
+    padding:16px 14px;
+  }
+  .policy-quick-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
   .policy-quick-grid a,
   .policy-quick-grid a:nth-child(odd),
-  .policy-quick-grid a:nth-child(even){padding:8px 0;border-right:0;border-bottom:1px solid var(--line)}
-  .policy-quick-grid a:last-child{border-bottom:0}
-  .footer-policies{grid-template-columns:1fr}
-  .footer-policies .footer-title{grid-column:auto}
+  .policy-quick-grid a:nth-child(even){
+    min-height:52px;
+    padding:10px 9px;
+    display:flex;
+    align-items:center;
+    font-size:11.5px;
+    line-height:1.4;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .policy-quick-grid a:nth-child(2n){
+    border-right:0;
+    padding-right:0;
+  }
+  .policy-quick-grid a:nth-child(2n+1){
+    padding-left:0;
+  }
+  .policy-quick-grid a:nth-last-child(-n+2){
+    border-bottom:0;
+  }
+  .mobile-policy-link{display:flex}
+  .footer-policies{grid-template-columns:1fr 1fr}
+  .footer-policies .footer-title{grid-column:1/-1}
 }
 
 
