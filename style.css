@@ -895,3 +895,52 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .footer-policies{grid-template-columns:1fr}
   .footer-policies .footer-title{grid-column:auto}
 }
+
+
+/* Phase 4A — premium product card refinement */
+.product-card-copy{
+  display:flex;
+  flex-direction:column;
+  min-height:280px;
+}
+/* Keep the featured 1 kg card visually balanced with the larger image area. */
+.product-card.featured .product-card-copy{min-height:200px;}
+.product-card h3{margin-top:7px}
+.product-price{
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:0 9px;
+}
+.product-price del{
+  font-size:14px;
+  font-weight:600;
+  color:#9a9182;
+}
+.product-price span{
+  font-size:27px;
+  font-weight:800;
+  color:var(--green);
+}
+.product-price small{
+  flex-basis:100%;
+  margin-top:5px;
+  font-size:10px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:#a56e0d;
+}
+.product-card-copy>p:not(.mini-label){
+  min-height:66px;
+}
+.product-card .buy-btn{
+  align-self:flex-start;
+  margin-top:auto;
+}
+@media(max-width:700px){
+  .product-card-copy{min-height:0}
+  .product-card-copy>p:not(.mini-label){min-height:0}
+  .product-card .buy-btn{align-self:stretch}
+}
