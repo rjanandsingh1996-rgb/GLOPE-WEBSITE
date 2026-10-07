@@ -823,3 +823,75 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .order-info-strip span{border-right:0;border-bottom:1px solid #ffffff2b}
   .order-info-strip span:last-child{border-bottom:0}
 }
+
+
+/* Phase 6 final — policy visibility */
+.policy-quick-links{
+  margin:22px 0 34px;
+  padding:18px 22px;
+  border:1px solid var(--line);
+  background:rgba(255,253,247,.72);
+}
+.policy-quick-title{
+  margin:0 0 11px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:var(--gold);
+}
+.policy-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.policy-quick-grid a{
+  color:var(--green);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+  padding:2px 16px;
+  border-right:1px solid var(--line);
+}
+.policy-quick-grid a:first-child{padding-left:0}
+.policy-quick-grid a:last-child{border-right:0}
+.policy-quick-grid a:hover,.policy-quick-grid a:focus-visible{
+  color:var(--gold);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.footer-main{grid-template-columns:1.45fr .9fr 1.15fr .95fr 1.45fr}
+.footer-policies a{font-size:11px;line-height:1.45}
+.footer-legal-links{
+  justify-content:flex-start;
+  padding:14px 0 18px;
+  font-size:10px;
+}
+.footer-legal-links span{color:#8fa197}
+@media(max-width:1050px){
+  .footer-main{grid-template-columns:1.3fr 1fr 1fr 1fr}
+  .footer-policies{grid-column:1/-1}
+  .footer-policies{display:grid;grid-template-columns:repeat(3,auto);gap:10px 24px;align-items:start}
+  .footer-policies .footer-title{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .policy-quick-links{margin:18px 0 28px;padding:16px 17px}
+  .policy-quick-grid{grid-template-columns:1fr 1fr;gap:0}
+  .policy-quick-grid a{padding:8px 10px;border-right:0;border-bottom:1px solid var(--line)}
+  .policy-quick-grid a:nth-child(odd){padding-left:0;border-right:1px solid var(--line)}
+  .policy-quick-grid a:nth-child(even){padding-right:0}
+  .policy-quick-grid a:nth-last-child(-n+2){border-bottom:0}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .footer-policies{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:11px 20px}
+  .footer-policies .footer-title{grid-column:1/-1}
+  .footer-policies a{font-size:12px}
+}
+@media(max-width:480px){
+  .policy-quick-grid{grid-template-columns:1fr}
+  .policy-quick-grid a,
+  .policy-quick-grid a:nth-child(odd),
+  .policy-quick-grid a:nth-child(even){padding:8px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .policy-quick-grid a:last-child{border-bottom:0}
+  .footer-policies{grid-template-columns:1fr}
+  .footer-policies .footer-title{grid-column:auto}
+}
