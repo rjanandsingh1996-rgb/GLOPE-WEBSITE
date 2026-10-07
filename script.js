@@ -102,7 +102,10 @@ const translations = {
     faq4Q:'शहद को कैसे रखें?', faq4A:'इसे ठंडी और सूखी जगह पर रखें और इस्तेमाल के बाद पैक को अच्छी तरह बंद रखें।',
     
     faq6Q:'क्या GLOPE Ghee उपलब्ध है?', faq6A:'GLOPE Ghee भविष्य के उत्पाद के रूप में planned है और अभी Coming Soon है।',
-    footerFaq:'सामान्य सवाल', policyQuickTitle:'ग्राहक सहायता और नीतियाँ', footerPrivacy:'गोपनीयता नीति', footerTerms:'नियम व शर्तें', footerShipping:'शिपिंग नीति', footerReturns:'रिटर्न और रिफंड', footerCancellation:'रद्द करने की नीति', footerGrievance:'शिकायत निवारण', footerPolicyNote:'नीतियाँ आपके ऑर्डर को भरोसे के साथ करने में मदद करती हैं।'
+    quickIngredient:'सामग्री: शहद', quickOrigin:'उत्पत्ति: भारत', quickStorage:'ठंडी और सूखी जगह पर रखें',
+    viewDetails:'उत्पाद की जानकारी देखें ↓',
+    mobileBuyLabel:'GLOPE Honey', mobileBuyHint:'ऊपर पैक चुनें', mobileBuyAction:'अभी खरीदें →',
+        footerFaq:'सामान्य सवाल', policyQuickTitle:'ग्राहक सहायता और नीतियाँ', footerPrivacy:'गोपनीयता नीति', footerTerms:'नियम व शर्तें', footerShipping:'शिपिंग नीति', footerReturns:'रिटर्न और रिफंड', footerCancellation:'रद्द करने की नीति', footerGrievance:'शिकायत निवारण', footerPolicyNote:'नीतियाँ आपके ऑर्डर को भरोसे के साथ करने में मदद करती हैं।'
   }
 };
 
