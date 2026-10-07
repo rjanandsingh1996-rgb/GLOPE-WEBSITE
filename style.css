@@ -721,3 +721,67 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   html{scroll-behavior:auto}
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* =========================
+   Phase 3 — UX + conversion polish
+   ========================= */
+
+/* Clear original-vs-offer price hierarchy */
+.product-price{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.product-price del{
+  font-size:15px;
+  font-weight:600;
+  color:#8a7b67;
+  text-decoration-thickness:1px;
+  opacity:.85;
+}
+.product-price span{
+  font-size:28px;
+  font-weight:800;
+  color:var(--green);
+}
+.product-card.featured .product-price span{
+  font-size:30px;
+}
+
+/* Make the primary purchase action easier to notice without changing the brand style */
+.buy-btn{
+  min-height:44px;
+  font-size:11px;
+  box-shadow:0 6px 16px #123f2b14;
+}
+.buy-btn:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* Slightly stronger featured-product hierarchy */
+.product-card.featured{
+  border-color:#cdb98e;
+  box-shadow:0 14px 34px #123f2b0d;
+}
+.product-card.featured .product-card-copy{
+  position:relative;
+}
+
+/* Improve scanability of product cards on touch screens */
+@media(max-width:700px){
+  .product-card-copy{
+    padding-bottom:24px!important;
+  }
+  .product-price{
+    margin:9px 0 14px;
+  }
+  .product-price span{
+    font-size:27px;
+  }
+  .product-price del{
+    font-size:14px;
+  }
+}
