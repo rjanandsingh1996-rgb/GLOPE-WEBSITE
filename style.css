@@ -785,3 +785,10 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
     font-size:14px;
   }
 }
+
+
+/* Phase 6 — legal/business footer links */
+.footer-legal-links{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;padding:16px 0 22px;border-top:1px solid var(--line);font-size:11px}
+.footer-legal-links a{color:var(--muted);text-decoration:none}
+.footer-legal-links a:hover,.footer-legal-links a:focus-visible{color:var(--green);text-decoration:underline}
+@media(max-width:700px){.footer-legal-links{gap:10px 15px;text-align:center}}
