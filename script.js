@@ -141,3 +141,24 @@ setLanguage(savedLanguage);
 
 const year=document.getElementById('year');
 if(year) year.textContent=new Date().getFullYear();
+
+/* Mobile sticky buy bar: show only while the product section is in view. */
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileBuyBar = document.querySelector('.mobile-buy-bar');
+  const productsSection = document.querySelector('#products');
+  if (!mobileBuyBar || !productsSection || !window.matchMedia('(max-width: 480px)').matches) return;
+
+  const setMobileBuyBar = (visible) => {
+    mobileBuyBar.classList.toggle('is-visible', visible);
+    document.body.classList.toggle('has-mobile-buy-bar', visible);
+    mobileBuyBar.setAttribute('aria-hidden', String(!visible));
+  };
+
+  setMobileBuyBar(false);
+
+  const observer = new IntersectionObserver(([entry]) => {
+    setMobileBuyBar(entry.isIntersecting);
+  }, { threshold: 0.08, rootMargin: '-8% 0px -12% 0px' });
+
+  observer.observe(productsSection);
+});
