@@ -987,3 +987,97 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   .product-card-copy>p:not(.mini-label){min-height:0}
   .product-card .buy-btn{align-self:stretch}
 }
+
+
+/* Phase 4B — premium product decision layer */
+.product-quick-facts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 12px;
+  margin:2px 0 13px;
+  padding-top:11px;
+  border-top:1px solid var(--line);
+}
+.product-quick-facts span{
+  font-size:9px;
+  line-height:1.4;
+  letter-spacing:.35px;
+  color:#7b705f;
+  font-weight:700;
+}
+.product-details-link{
+  display:inline-block;
+  margin:0 0 18px;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.4px;
+  text-decoration:none;
+}
+.product-details-link:hover,
+.product-details-link:focus-visible{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.mobile-buy-bar{display:none}
+@media(max-width:700px){
+  .product-quick-facts{
+    gap:5px 9px;
+    margin-top:0;
+    padding-top:10px;
+  }
+  .product-quick-facts span{
+    font-size:8.5px;
+  }
+  .product-details-link{
+    margin-bottom:15px;
+    font-size:9.5px;
+  }
+}
+@media(max-width:480px){
+  body{padding-bottom:68px}
+  .mobile-buy-bar{
+    position:fixed;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    z-index:90;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 11px 10px 14px;
+    background:rgba(11,47,32,.97);
+    border:1px solid #ffffff22;
+    box-shadow:0 8px 28px rgba(0,0,0,.16);
+  }
+  .mobile-buy-bar span{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .mobile-buy-bar b{
+    color:#fff;
+    font-size:10px;
+    letter-spacing:.5px;
+  }
+  .mobile-buy-bar small{
+    color:#d8e0d9;
+    font-size:8px;
+  }
+  .mobile-buy-bar a{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:38px;
+    padding:0 15px;
+    background:var(--gold);
+    color:#163b2b;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.5px;
+    text-decoration:none;
+  }
+}
