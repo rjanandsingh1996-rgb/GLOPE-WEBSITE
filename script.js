@@ -102,7 +102,10 @@ const translations = {
     faq4Q:'शहद को कैसे रखें?', faq4A:'इसे ठंडी और सूखी जगह पर रखें और इस्तेमाल के बाद पैक को अच्छी तरह बंद रखें।',
     
     faq6Q:'क्या GLOPE Ghee उपलब्ध है?', faq6A:'GLOPE Ghee भविष्य के उत्पाद के रूप में planned है और अभी Coming Soon है।',
-    footerFaq:'सामान्य सवाल', policyQuickTitle:'ग्राहक सहायता और नीतियाँ', footerPrivacy:'गोपनीयता नीति', footerTerms:'नियम व शर्तें', footerShipping:'शिपिंग नीति', footerReturns:'रिटर्न और रिफंड', footerCancellation:'रद्द करने की नीति', footerGrievance:'शिकायत निवारण', footerPolicyNote:'नीतियाँ आपके ऑर्डर को भरोसे के साथ करने में मदद करती हैं।'
+    quickIngredient:'सामग्री: शहद', quickOrigin:'उत्पत्ति: भारत', quickStorage:'ठंडी और सूखी जगह पर रखें',
+    viewDetails:'उत्पाद की जानकारी देखें ↓',
+    mobileBuyLabel:'GLOPE Honey', mobileBuyHint:'ऊपर पैक चुनें', mobileBuyAction:'अभी खरीदें →',
+        footerFaq:'सामान्य सवाल', policyQuickTitle:'ग्राहक सहायता और नीतियाँ', footerPrivacy:'गोपनीयता नीति', footerTerms:'नियम व शर्तें', footerShipping:'शिपिंग नीति', footerReturns:'रिटर्न और रिफंड', footerCancellation:'रद्द करने की नीति', footerGrievance:'शिकायत निवारण', footerPolicyNote:'नीतियाँ आपके ऑर्डर को भरोसे के साथ करने में मदद करती हैं।'
   }
 };
 
@@ -138,3 +141,24 @@ setLanguage(savedLanguage);
 
 const year=document.getElementById('year');
 if(year) year.textContent=new Date().getFullYear();
+
+/* Mobile sticky buy bar: show only while the product section is in view. */
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileBuyBar = document.querySelector('.mobile-buy-bar');
+  const productsSection = document.querySelector('#products');
+  if (!mobileBuyBar || !productsSection || !window.matchMedia('(max-width: 480px)').matches) return;
+
+  const setMobileBuyBar = (visible) => {
+    mobileBuyBar.classList.toggle('is-visible', visible);
+    document.body.classList.toggle('has-mobile-buy-bar', visible);
+    mobileBuyBar.setAttribute('aria-hidden', String(!visible));
+  };
+
+  setMobileBuyBar(false);
+
+  const observer = new IntersectionObserver(([entry]) => {
+    setMobileBuyBar(entry.isIntersecting);
+  }, { threshold: 0.08, rootMargin: '-8% 0px -12% 0px' });
+
+  observer.observe(productsSection);
+});
