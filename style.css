@@ -903,6 +903,8 @@ html[lang="hi"] .faq-head h2,.faq-list summary{font-family:"Noto Serif Devanagar
   flex-direction:column;
   min-height:280px;
 }
+/* Keep the featured 1 kg card visually balanced with the larger image area. */
+.product-card.featured .product-card-copy{min-height:200px;}
 .product-card h3{margin-top:7px}
 .product-price{
   display:flex;
