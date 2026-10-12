@@ -1,0 +1,5 @@
+src/
+migrations/
+SALES-WORKSPACE-SETUP.md
+README.txt
+wrangler.jsonc
