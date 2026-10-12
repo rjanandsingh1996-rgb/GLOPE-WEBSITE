@@ -53,3 +53,10 @@ CREATE TABLE IF NOT EXISTS admin_audit_log (
  created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
 );
 CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
+
+CREATE TABLE IF NOT EXISTS admin_login_attempts (
+ bucket_key TEXT PRIMARY KEY,
+ window_started_at INTEGER NOT NULL,
+ attempts INTEGER NOT NULL DEFAULT 0 CHECK(attempts >= 0),
+ blocked_until INTEGER
+);
