@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Sign in · GLOPE Workspace</title>
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<main class="shell auth-shell">
+<header class="topbar">
+<a class="brand" href="/" aria-label="GLOPE public website"><span class="mark">G</span><span>glope</span></a>
+<span class="private-label">Private workspace</span>
+</header>
+<section class="intro">
+<p class="eyebrow">GLOPE TEAM WORKSPACE</p>
+<h1>Welcome<br><em>back.</em></h1>
+<p class="subhead">Sign in to manage GLOPE enquiries, orders and stock. This area is for authorised team members only.</p>
+</section>
+<section class="setup-card login-card">
+<div class="status-icon">G</div>
+<p class="eyebrow">ADMIN SIGN-IN</p>
+<h2>Workspace login</h2>
+<form id="login-form" autocomplete="on">
+<label for="username">Username</label>
+<input id="username" name="username" type="text" autocomplete="username" maxlength="120" required>
+<label for="password">Password</label>
+<input id="password" name="password" type="password" autocomplete="current-password" maxlength="512" required>
+<button class="login-button" type="submit">Sign in securely <span aria-hidden="true">→</span></button>
+<p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+</form>
+<p class="note">Keep your login private. Do not share your password or store it in the website code.</p>
+</section>
+<footer><span>GLOPE · From Farm to Family</span><a href="/">Back to public website ↗</a></footer>
+</main>
+<script src="/admin/login.js" defer></script>
+</body>
+</html>
