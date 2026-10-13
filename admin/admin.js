@@ -152,6 +152,21 @@
         catch(error){select.value=previous;message(error.message,"error");}
         finally{select.disabled=false;}
       }));
+      const actionsCell=row.insertCell();
+      const deleteButton=document.createElement("button");deleteButton.type="button";deleteButton.className="danger-button";deleteButton.textContent="Delete";
+      deleteButton.setAttribute("aria-label","Delete order #"+order.id);
+      if((order.payment_status||"pending")!=="pending"||(order.order_status||"confirmed")!=="confirmed"){deleteButton.disabled=true;deleteButton.title="Only confirmed, unshipped orders with pending payment can be deleted.";}
+      deleteButton.addEventListener("click",async()=>{
+        if(!window.confirm("Delete order #"+order.id+"? This cannot be undone. Stock will be restored if this order is eligible."))return;
+        deleteButton.disabled=true;
+        try{await api("orders/"+order.id,{method:"DELETE",headers:{"accept":"application/json"}});
+          state.orders=state.orders.filter(item=>item.id!==order.id);
+          const stock=state.inventory.find(item=>item.pack_size_g===order.pack_size_g);
+          if(stock)stock.stock_qty+=order.quantity;
+          renderOrders();renderInventory();message("Order deleted and stock restored.","success");
+        }catch(error){message(error.message,"error");deleteButton.disabled=false;}
+      });
+      actionsCell.appendChild(deleteButton);
     });
     $("metric-orders").textContent=state.orders.length;
   }
