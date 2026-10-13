@@ -169,7 +169,7 @@ function isAdminPath(path) {
 }
 
 function isPublicAdminAsset(path) {
-  return path === "/admin/admin.css" || path === "/admin/login.js";
+  return path === "/admin/admin.css" || path === "/admin/login.js" || path === "/admin/admin.js";
 }
 
 async function handleLogin(request, env) {
