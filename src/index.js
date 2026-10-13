@@ -323,15 +323,36 @@ export default {
         }
 
         if (route.length === 2 && route[0] === "leads" && /^\d+$/.test(route[1])) {
-          if (request.method !== "PATCH") return json({ error: "Method not allowed" }, 405, { allow: "PATCH" });
-          let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
-          const statuses = ["new","contacted","interested","order_confirmed","not_interested","follow_up"];
-          if (!statuses.includes(input.status)) return json({ error: "Invalid enquiry status." }, 400);
           const id = Number(route[1]);
-          const result = await env.DB.prepare("UPDATE leads SET status = ?1, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?2").bind(input.status, id).run();
-          if (!result.meta?.changes) return json({ error: "Enquiry not found." }, 404);
-          await audit("updated status", "lead", id);
-          return json({ ok: true });
+          if (request.method === "PATCH") {
+            let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
+            const existing = await env.DB.prepare("SELECT id, customer_name, phone, product_interest, source, status, follow_up_at, notes FROM leads WHERE id = ?1").bind(id).first();
+            if (!existing) return json({ error: "Enquiry not found." }, 404);
+            const statuses = ["new","contacted","interested","order_confirmed","not_interested","follow_up"];
+            const name = typeof input.customer_name === "string" ? input.customer_name.trim().slice(0,120) : existing.customer_name;
+            const phone = typeof input.phone === "string" ? input.phone.trim().slice(0,20) : existing.phone;
+            const product = typeof input.product_interest === "string" ? input.product_interest.trim().slice(0,120) : existing.product_interest;
+            const source = typeof input.source === "string" ? input.source.trim().slice(0,80) : existing.source;
+            const notes = typeof input.notes === "string" ? input.notes.trim().slice(0,2000) : existing.notes;
+            const follow = input.follow_up_at === null || input.follow_up_at === "" ? null : typeof input.follow_up_at === "string" ? input.follow_up_at.slice(0,30) : existing.follow_up_at;
+            const status = input.status === undefined ? existing.status : input.status;
+            if (name.length < 1 || phone.length < 7) return json({ error: "Enter a customer name and valid phone number." }, 400);
+            if (!statuses.includes(status)) return json({ error: "Invalid enquiry status." }, 400);
+            await env.DB.prepare("UPDATE leads SET customer_name = ?1, phone = ?2, product_interest = ?3, source = ?4, status = ?5, follow_up_at = ?6, notes = ?7, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?8")
+              .bind(name, phone, product, source, status, follow, notes, id).run();
+            await audit(input.status === undefined ? "edited" : "updated enquiry", "lead", id);
+            return json({ ok: true });
+          }
+          if (request.method === "DELETE") {
+            const existing = await env.DB.prepare("SELECT id FROM leads WHERE id = ?1").bind(id).first();
+            if (!existing) return json({ error: "Enquiry not found." }, 404);
+            const linked = await env.DB.prepare("SELECT COUNT(*) AS total FROM orders WHERE lead_id = ?1").bind(id).first();
+            if (Number(linked?.total || 0) > 0) return json({ error: "This enquiry has an order linked to it, so it cannot be deleted. Keep the record for order history." }, 409);
+            await env.DB.prepare("DELETE FROM leads WHERE id = ?1").bind(id).run();
+            await audit("deleted", "lead", id);
+            return json({ ok: true });
+          }
+          return json({ error: "Method not allowed" }, 405, { allow: "PATCH, DELETE" });
         }
 
         if (route.length === 1 && route[0] === "orders") {
