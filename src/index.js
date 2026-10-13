@@ -395,9 +395,20 @@ export default {
         }
 
         if (route.length === 2 && route[0] === "orders" && /^\d+$/.test(route[1])) {
-          if (request.method !== "PATCH") return json({ error: "Method not allowed" }, 405, { allow: "PATCH" });
-          let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
           const id = Number(route[1]);
+          if (request.method === "DELETE") {
+            const order = await env.DB.prepare("SELECT id, pack_size_g, quantity, order_status, payment_status FROM orders WHERE id = ?1").bind(id).first();
+            if (!order) return json({ error: "Order not found." }, 404);
+            if (order.payment_status !== "pending" || order.order_status !== "confirmed") {
+              return json({ error: "Only a confirmed, unshipped order with payment pending can be deleted. Paid or progressed orders are retained for history." }, 409);
+            }
+            await env.DB.prepare("DELETE FROM orders WHERE id = ?1").bind(id).run();
+            await env.DB.prepare("UPDATE inventory SET stock_qty = stock_qty + ?1, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE pack_size_g = ?2").bind(order.quantity, order.pack_size_g).run();
+            await audit("deleted pending order; stock restored", "order", id);
+            return json({ ok: true, stock_restored: true });
+          }
+          if (request.method !== "PATCH") return json({ error: "Method not allowed" }, 405, { allow: "PATCH, DELETE" });
+          let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
           const order = await env.DB.prepare("SELECT id, order_status, payment_status FROM orders WHERE id = ?1").bind(id).first();
           if (!order) return json({ error: "Order not found." }, 404);
           const orderStatuses = ["confirmed","packed","dispatched","delivered"];
