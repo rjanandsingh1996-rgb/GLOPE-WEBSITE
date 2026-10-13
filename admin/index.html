@@ -9,24 +9,60 @@
 <link rel="stylesheet" href="/admin/admin.css">
 </head>
 <body>
-<main class="shell">
+<main class="shell dashboard-shell">
 <header class="topbar">
 <a class="brand" href="/" aria-label="GLOPE public website"><span class="mark">G</span><span>glope</span></a>
 <div class="header-actions"><span class="private-label">Private workspace</span><button id="logout-button" class="logout-button" type="button">Sign out</button></div>
 </header>
-<section class="intro">
+<section class="intro dashboard-intro">
 <p class="eyebrow">GLOPE TEAM WORKSPACE</p>
 <h1>Grow with<br><em>intention.</em></h1>
-<p class="subhead">A private place to organise enquiries, orders and stock — built for the way GLOPE works today.</p>
+<p class="subhead">Your private place to organise customer enquiries, orders and honey stock.</p>
 </section>
-<section class="setup-card" aria-live="polite">
-<div class="status-icon">✓</div>
-<p class="eyebrow">SECURE ACCESS CHECK</p>
-<h2>Workspace setup</h2>
-<p id="status-copy">Checking database connection…</p>
-<div class="status-row"><span>Access</span><strong id="auth-status">Checking</strong></div>
-<div class="status-row"><span>Database</span><strong id="db-status">Checking</strong></div>
-<p class="note">Login protection is active. Enquiries, orders and stock modules will be added after the database and access checks pass.</p>
+<div id="global-message" class="global-message" role="status" aria-live="polite"></div>
+<section class="metric-grid" aria-label="Workspace summary">
+<article class="metric-card"><span>Total enquiries</span><strong id="metric-leads">—</strong><small>Customer leads saved</small></article>
+<article class="metric-card"><span>Total orders</span><strong id="metric-orders">—</strong><small>Orders recorded</small></article>
+<article class="metric-card"><span>Honey units in stock</span><strong id="metric-stock">—</strong><small>Across all pack sizes</small></article>
+</section>
+<nav class="module-nav" aria-label="Workspace modules">
+<button type="button" class="module-tab active" data-panel="leads-panel">Enquiries</button>
+<button type="button" class="module-tab" data-panel="orders-panel">Orders</button>
+<button type="button" class="module-tab" data-panel="inventory-panel">Inventory</button>
+</nav>
+<section id="leads-panel" class="module-panel">
+<div class="section-heading"><div><p class="eyebrow">CUSTOMER RELATIONSHIPS</p><h2>Enquiries</h2><p class="section-desc">Save a new lead and track the next step.</p></div></div>
+<form id="lead-form" class="data-form">
+<label>Customer name<input name="customer_name" maxlength="120" required placeholder="Full name"></label>
+<label>Phone number<input name="phone" maxlength="20" required inputmode="tel" placeholder="Customer phone"></label>
+<label>Interested in<select name="product_interest"><option>GLOPE Honey — 250 g</option><option>GLOPE Honey — 500 g</option><option>GLOPE Honey — 1 kg</option><option>GLOPE Ghee — coming soon</option><option>Other</option></select></label>
+<label>Source<select name="source"><option>WhatsApp</option><option>Phone call</option><option>Instagram</option><option>Website</option><option>Referral</option><option>Other</option></select></label>
+<label>Follow-up date<input type="date" name="follow_up_at"></label>
+<label class="wide-field">Notes<textarea name="notes" maxlength="2000" rows="2" placeholder="Customer request or follow-up notes"></textarea></label>
+<div class="form-actions"><button class="primary-button" type="submit">Save enquiry</button></div>
+</form>
+<div class="table-heading"><h3>Recent enquiries</h3><button class="secondary-button" type="button" data-refresh="leads">Refresh</button></div>
+<div class="table-wrap"><table><thead><tr><th>Customer</th><th>Interested in</th><th>Source</th><th>Status</th><th>Follow-up</th></tr></thead><tbody id="leads-table"><tr><td colspan="5">Loading enquiries…</td></tr></tbody></table></div>
+</section>
+<section id="orders-panel" class="module-panel" hidden>
+<div class="section-heading"><div><p class="eyebrow">FULFILMENT</p><h2>Orders</h2><p class="section-desc">Create an order for an existing enquiry. Stock is deducted when an order is saved.</p></div></div>
+<form id="order-form" class="data-form">
+<label>Customer / enquiry<select name="lead_id" id="order-lead" required><option value="">Load enquiries first</option></select></label>
+<label>Pack size<select name="pack_size_g"><option value="250">250 g</option><option value="500">500 g</option><option value="1000">1 kg</option></select></label>
+<label>Quantity<input name="quantity" type="number" min="1" max="10000" value="1" required></label>
+<label>Unit price (₹)<input name="unit_price_rupees" type="number" min="0" step="0.01" value="139" required></label>
+<label>Shipping (₹)<input name="shipping_rupees" type="number" min="0" step="0.01" value="50" required></label>
+<label>Payment method<select name="payment_method"><option>COD</option><option>UPI</option><option>Bank Transfer</option><option>Other</option></select></label>
+<label class="wide-field">Notes<textarea name="notes" maxlength="2000" rows="2" placeholder="Optional order notes"></textarea></label>
+<div class="form-actions"><button class="primary-button" type="submit">Save order</button><span class="form-hint">Only save real orders; stock changes immediately.</span></div>
+</form>
+<div class="table-heading"><h3>Recent orders</h3><button class="secondary-button" type="button" data-refresh="orders">Refresh</button></div>
+<div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Pack / Qty</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead><tbody id="orders-table"><tr><td colspan="6">Loading orders…</td></tr></tbody></table></div>
+</section>
+<section id="inventory-panel" class="module-panel" hidden>
+<div class="section-heading"><div><p class="eyebrow">STOCK CONTROL</p><h2>Inventory</h2><p class="section-desc">Set the current sellable quantity for each honey pack size.</p></div></div>
+<div class="inventory-grid" id="inventory-cards"><p>Loading stock…</p></div>
+<p class="inventory-warning">Stock starts at zero. Enter your actual available stock before recording orders. Do not enter estimates.</p>
 </section>
 <footer><span>GLOPE · From Farm to Family</span><a href="/">Back to public website ↗</a></footer>
 </main>
