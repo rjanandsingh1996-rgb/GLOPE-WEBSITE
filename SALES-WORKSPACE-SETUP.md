@@ -36,3 +36,8 @@ Configure these as **Worker secrets** for the `glope-website` Worker in Cloudfla
 - Custom server-side login, signed sessions, logout, login rate limiting and database health check are included.
 - Lead entry, order management, stock editing and reporting are not implemented yet.
 - Keep the workspace private; do not add real customer data until the security tests pass.
+### Preview verification checkpoint
+
+- Trigger a fresh Worker Preview build from this feature branch.
+- Verify the preview URL, authentication, and D1 database connection before further development.
+- Do not deploy or merge to the production branch without explicit approval.
