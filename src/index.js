@@ -373,6 +373,22 @@ export default {
           return json({ error: "Method not allowed" }, 405, { allow: "GET, POST" });
         }
 
+        if (route.length === 2 && route[0] === "orders" && /^\\d+$/.test(route[1])) {
+          if (request.method !== "PATCH") return json({ error: "Method not allowed" }, 405, { allow: "PATCH" });
+          let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
+          const id = Number(route[1]);
+          const order = await env.DB.prepare("SELECT id, order_status, payment_status FROM orders WHERE id = ?1").bind(id).first();
+          if (!order) return json({ error: "Order not found." }, 404);
+          const orderStatuses = ["confirmed","packed","dispatched","delivered"];
+          const paymentStatuses = ["pending","paid","partially_paid","refunded"];
+          const nextOrderStatus = input.order_status === undefined ? order.order_status : input.order_status;
+          const nextPaymentStatus = input.payment_status === undefined ? order.payment_status : input.payment_status;
+          if (!orderStatuses.includes(nextOrderStatus) || !paymentStatuses.includes(nextPaymentStatus)) return json({ error: "Invalid order or payment status." }, 400);
+          await env.DB.prepare("UPDATE orders SET order_status = ?1, payment_status = ?2, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?3").bind(nextOrderStatus, nextPaymentStatus, id).run();
+          await audit("updated status", "order", id);
+          return json({ ok: true });
+        }
+
         if (route.length === 1 && route[0] === "inventory") {
           if (request.method === "GET") {
             const result = await env.DB.prepare("SELECT pack_size_g, product_name, stock_qty, updated_at FROM inventory ORDER BY pack_size_g").all();
