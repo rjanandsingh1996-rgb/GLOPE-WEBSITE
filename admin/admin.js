@@ -73,6 +73,11 @@
     $("metric-leads").textContent = state.leads.length;
     fillLeadOptions();
   }
+  function statusPicker(options, selected, onChange) {
+    const select=document.createElement("select"); select.className="status-select";
+    options.forEach(([value,label])=>{const option=document.createElement("option");option.value=value;option.textContent=label;select.appendChild(option);});
+    select.value=selected; select.addEventListener("change",()=>onChange(select)); return select;
+  }
   function renderOrders() {
     const body = $("orders-table"); body.replaceChildren();
     if (!state.orders.length) { const row=body.insertRow(); const cell=row.insertCell(); cell.colSpan=6; cell.textContent="No orders recorded yet."; }
@@ -82,8 +87,21 @@
       addCell(row, (order.customer_name || "Unknown customer") + "\n" + (order.phone || ""));
       addCell(row, (order.pack_size_g===1000 ? "1 kg" : order.pack_size_g+" g") + " × " + order.quantity);
       addCell(row, money(order.total_paise));
-      addCell(row, (order.payment_method || "—") + " · " + (order.payment_status || "pending"));
-      addCell(row, order.order_status || "confirmed");
+      const paymentCell=row.insertCell();
+      const paymentLabel=document.createElement("small"); paymentLabel.className="table-subtext"; paymentLabel.textContent=order.payment_method || "—"; paymentCell.appendChild(paymentLabel);
+      paymentCell.appendChild(statusPicker([["pending","Pending"],["partially_paid","Partially paid"],["paid","Paid"],["refunded","Refunded"]],order.payment_status||"pending",async(select)=>{
+        const previous=order.payment_status||"pending";select.disabled=true;
+        try{await api("orders/"+order.id,{method:"PATCH",headers:{"content-type":"application/json","accept":"application/json"},body:JSON.stringify({payment_status:select.value})});order.payment_status=select.value;message("Payment status updated.","success");}
+        catch(error){select.value=previous;message(error.message,"error");}
+        finally{select.disabled=false;}
+      }));
+      const statusCell=row.insertCell();
+      statusCell.appendChild(statusPicker([["confirmed","Confirmed"],["packed","Packed"],["dispatched","Dispatched"],["delivered","Delivered"]],order.order_status||"confirmed",async(select)=>{
+        const previous=order.order_status||"confirmed";select.disabled=true;
+        try{await api("orders/"+order.id,{method:"PATCH",headers:{"content-type":"application/json","accept":"application/json"},body:JSON.stringify({order_status:select.value})});order.order_status=select.value;message("Order status updated.","success");}
+        catch(error){select.value=previous;message(error.message,"error");}
+        finally{select.disabled=false;}
+      }));
     });
     $("metric-orders").textContent=state.orders.length;
   }
