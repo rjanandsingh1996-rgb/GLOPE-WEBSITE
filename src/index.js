@@ -373,7 +373,7 @@ export default {
           return json({ error: "Method not allowed" }, 405, { allow: "GET, POST" });
         }
 
-        if (route.length === 2 && route[0] === "orders" && /^\\d+$/.test(route[1])) {
+        if (route.length === 2 && route[0] === "orders" && /^\d+$/.test(route[1])) {
           if (request.method !== "PATCH") return json({ error: "Method not allowed" }, 405, { allow: "PATCH" });
           let input; try { input = await readJson(); } catch (e) { return json({ error: e.message }, 400); }
           const id = Number(route[1]);
