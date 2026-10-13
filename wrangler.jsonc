@@ -3,6 +3,9 @@
   "name": "glope-website",
   "main": "src/index.js",
   "compatibility_date": "2026-10-07",
+  "vars": {
+    "ADMIN_USERNAME": "rjanandsingh"
+  },
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
@@ -18,11 +21,4 @@
       }
     ]
   }
-}
-{
-  // ...
-  "vars": {
-    "ADMIN_USERNAME": "rjanandsingh"
-  },
-  // ...
 }
