@@ -268,6 +268,7 @@ export default {
         const session = await verifySession(request, env);
         if (!session) return json({ error: "Authentication required" }, 401);
         if (!env.DB) return json({ error: "Database is not configured" }, 503);
+        if (request.method !== "GET" && request.method !== "HEAD" && !requestHasSameOrigin(request)) return json({ error: "Request rejected" }, 403);
 
         if (path === "/api/admin/session" || path === "/api/admin/login" || path === "/api/admin/logout") {
           return json({ error: "Not found" }, 404);
