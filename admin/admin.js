@@ -43,11 +43,57 @@
     });
     if (previous) select.value = previous;
   }
+  function openLeadEditor(lead) {
+    const dialog = document.createElement("dialog");
+    dialog.className = "lead-editor-dialog";
+    const title = document.createElement("h2"); title.textContent = "Edit enquiry";
+    const intro = document.createElement("p"); intro.className = "section-desc"; intro.textContent = "Update this customer's saved details.";
+    const form = document.createElement("form"); form.className = "lead-editor-form";
+    const field = (labelText, name, value, type="text") => {
+      const label=document.createElement("label"); label.textContent=labelText;
+      const input=document.createElement("input"); input.name=name; input.type=type; input.value=value||"";
+      if(name==="customer_name"){input.maxLength=120;input.required=true;}
+      if(name==="phone"){input.maxLength=20;input.required=true;input.inputMode="tel";}
+      if(name==="follow_up_at") input.value=value?String(value).slice(0,10):"";
+      label.appendChild(input); form.appendChild(label); return input;
+    };
+    field("Customer name","customer_name",lead.customer_name);
+    field("Phone number","phone",lead.phone,"tel");
+    field("Interested in","product_interest",lead.product_interest);
+    field("Source","source",lead.source);
+    field("Follow-up date","follow_up_at",lead.follow_up_at,"date");
+    const noteLabel=document.createElement("label");noteLabel.className="wide-field";noteLabel.textContent="Notes";
+    const notes=document.createElement("textarea");notes.name="notes";notes.rows=3;notes.maxLength=2000;notes.value=lead.notes||"";noteLabel.appendChild(notes);form.appendChild(noteLabel);
+    const actions=document.createElement("div");actions.className="form-actions wide-field";
+    const save=document.createElement("button");save.className="primary-button";save.type="submit";save.textContent="Save changes";
+    const cancel=document.createElement("button");cancel.className="secondary-button";cancel.type="button";cancel.textContent="Cancel";cancel.addEventListener("click",()=>dialog.close());
+    actions.append(save,cancel);form.appendChild(actions);dialog.append(title,intro,form);document.body.appendChild(dialog);
+    dialog.addEventListener("close",()=>dialog.remove(),{once:true});
+    form.addEventListener("submit",async(event)=>{
+      event.preventDefault();save.disabled=true;
+      const data=Object.fromEntries(new FormData(form).entries());
+      if(data.phone.trim().length<7){message("Enter a valid customer phone number.","error");save.disabled=false;return;}
+      try {
+        await api("leads/"+lead.id,{method:"PATCH",headers:{"content-type":"application/json","accept":"application/json"},body:JSON.stringify(data)});
+        await loadLeads();message("Enquiry details updated successfully.","success");dialog.close();
+      } catch(error){message(error.message,"error");save.disabled=false;}
+    });
+    dialog.addEventListener("click",(event)=>{if(event.target===dialog)dialog.close();});
+    dialog.showModal();
+  }
+  async function deleteLead(lead, button) {
+    const hasOrder=state.orders.some(order=>Number(order.lead_id)===Number(lead.id));
+    const warning=hasOrder?"This customer has an order linked to the enquiry. The system will protect the order history and may refuse deletion.":"This permanently deletes the saved enquiry.";
+    if(!window.confirm("Delete enquiry for "+lead.customer_name+"?\n\n"+warning+"\n\nThis cannot be undone."))return;
+    button.disabled=true;
+    try{await api("leads/"+lead.id,{method:"DELETE"});await loadLeads();message("Enquiry deleted.","success");}
+    catch(error){message(error.message,"error");button.disabled=false;}
+  }
   function renderLeads() {
     const body = $("leads-table");
     body.replaceChildren();
     if (!state.leads.length) {
-      const row = body.insertRow(); const cell = row.insertCell(); cell.colSpan = 5; cell.textContent = "No enquiries yet. Use the form above to add your first customer.";
+      const row = body.insertRow(); const cell = row.insertCell(); cell.colSpan = 6; cell.textContent = "No enquiries yet. Use the form above to add your first customer.";
     }
     state.leads.forEach((lead) => {
       const row = body.insertRow();
@@ -62,13 +108,17 @@
       });
       select.value = lead.status;
       select.addEventListener("change", async () => {
-        select.disabled = true;
+        const previous=lead.status;select.disabled = true;
         try { await api("leads/" + lead.id, { method:"PATCH", headers:{"content-type":"application/json","accept":"application/json"}, body:JSON.stringify({status:select.value}) }); lead.status=select.value; message("Enquiry status updated.","success"); }
-        catch (error) { select.value=lead.status; message(error.message,"error"); }
+        catch (error) { select.value=previous; message(error.message,"error"); }
         finally { select.disabled=false; }
       });
       cell.appendChild(select);
       addCell(row, dateLabel(lead.follow_up_at));
+      const actions=row.insertCell();actions.className="row-actions";
+      const edit=document.createElement("button");edit.type="button";edit.className="secondary-button compact-button";edit.textContent="Edit";edit.addEventListener("click",()=>openLeadEditor(lead));
+      const del=document.createElement("button");del.type="button";del.className="danger-button compact-button";del.textContent="Delete";del.addEventListener("click",()=>deleteLead(lead,del));
+      actions.append(edit,del);
     });
     $("metric-leads").textContent = state.leads.length;
     fillLeadOptions();
