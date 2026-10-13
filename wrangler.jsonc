@@ -19,3 +19,10 @@
     ]
   }
 }
+{
+  // ...
+  "vars": {
+    "ADMIN_USERNAME": "rjanandsingh"
+  },
+  // ...
+}
