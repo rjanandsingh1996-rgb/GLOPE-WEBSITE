@@ -130,7 +130,7 @@
   }
   function renderOrders() {
     const body = $("orders-table"); body.replaceChildren();
-    if (!state.orders.length) { const row=body.insertRow(); const cell=row.insertCell(); cell.colSpan=6; cell.textContent="No orders recorded yet."; }
+    if (!state.orders.length) { const row=body.insertRow(); const cell=row.insertCell(); cell.colSpan=7; cell.textContent="No orders recorded yet."; }
     state.orders.forEach((order) => {
       const row=body.insertRow();
       addCell(row, "#" + order.id + "\n" + dateLabel(order.created_at));
