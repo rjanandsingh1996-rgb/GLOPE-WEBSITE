@@ -1,0 +1,22 @@
+/* GLOPE V20 — premium balanced homepage interactions */
+.topline{overflow:hidden;justify-content:flex-start;white-space:nowrap}
+.topline-track{display:flex;align-items:center;width:max-content;flex:0 0 auto;animation:glope-ticker 34s linear infinite}
+.topline-copy{display:block;flex:0 0 auto;padding:0 2rem}
+@keyframes glope-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.product-carousel{position:relative}
+.product-grid.glope-carousel{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;padding:0 1px 12px;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.product-grid.glope-carousel::-webkit-scrollbar{display:none}
+.product-grid.glope-carousel>.product-card.glope-slide{display:flex;flex:0 0 calc((100% - 32px)/3);flex-direction:column;min-width:0;grid-column:auto;scroll-snap-align:start}
+.product-grid.glope-carousel>.product-card.glope-slide.featured{display:flex;grid-template-columns:none}
+.product-grid.glope-carousel .product-photo{width:100%;min-height:0;aspect-ratio:1.08/1;overflow:hidden}
+.product-grid.glope-carousel .product-photo img{width:100%;height:100%;object-fit:cover}
+.product-grid.glope-carousel .product-card-copy{flex:1}
+.glope-carousel-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin:12px 0 0}
+.glope-carousel-controls button{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--green);font:600 20px/1 "DM Sans",Arial,sans-serif;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.glope-carousel-controls button:hover,.glope-carousel-controls button:focus-visible{background:var(--green);color:#fff;border-color:var(--green)}
+.glope-carousel-controls button:focus-visible{outline:3px solid #bf821455;outline-offset:3px}
+.glope-carousel-controls button:disabled{opacity:.4;cursor:not-allowed}
+.customer-reviews[hidden]{display:none!important}
+@media(max-width:850px){.product-grid.glope-carousel>.product-card.glope-slide{flex-basis:min(82%,360px)}}
+@media(max-width:480px){.product-grid.glope-carousel>.product-card.glope-slide{flex-basis:88%}.glope-carousel-controls{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.topline-track{animation:none;width:100%;justify-content:center}.topline-copy[aria-hidden="true"]{display:none}.product-grid.glope-carousel{scroll-behavior:auto}.glope-carousel-controls button{transition:none}}

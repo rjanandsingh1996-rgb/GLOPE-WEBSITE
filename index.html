@@ -23,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/honey-1kg.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="homepage-v20.css">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -41,7 +42,7 @@
 </script>
 </head>
 <body>
-<div class="topline" data-i18n="topline">GLOPE AGRO PRODUCTS <span>•</span> AGRA <span>•</span> FROM FARM TO FAMILY</div>
+<div class="topline" aria-label="GLOPE brand message"><div class="topline-track"><span class="topline-copy" data-i18n="topline">GLOPE AGRO PRODUCTS • AGRA • FROM FARM TO FAMILY</span><span class="topline-copy" data-i18n="topline" aria-hidden="true">GLOPE AGRO PRODUCTS • AGRA • FROM FARM TO FAMILY</span></div></div>
 
 <header class="site-header">
   <div class="wrap nav">
@@ -139,8 +140,8 @@
       <span data-i18n="orderConfirm">Final amount confirmed before dispatch</span>
     </div>
 
-    <div class="product-grid">
-      <article class="product-card featured">
+    <div class="product-carousel" aria-label="GLOPE honey products"><div class="product-grid glope-carousel" role="region" aria-roledescription="carousel" aria-label="GLOPE honey products">
+      <article class="product-card featured glope-slide">
         <div class="product-photo"><img src="images/honey-1kg.jpg" alt="GLOPE Honey 1 kg"></div>
         <div class="product-card-copy">
           <p class="mini-label" data-i18n="honeyLabel">HONEY</p>
@@ -158,7 +159,7 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card glope-slide">
         <div class="product-photo"><img src="images/honey-500g.jpg" alt="GLOPE Honey 500 g" loading="lazy" decoding="async"></div>
         <div class="product-card-copy">
           <p class="mini-label" data-i18n="honeyLabel">HONEY</p>
@@ -176,7 +177,7 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card glope-slide">
         <div class="product-photo"><img src="images/honey-250g.jpg" alt="GLOPE Honey 250 g" loading="lazy" decoding="async"></div>
         <div class="product-card-copy">
           <p class="mini-label" data-i18n="honeyLabel">HONEY</p>
@@ -193,7 +194,7 @@
           <a class="buy-btn" href="https://wa.me/917253877546?text=Hello%20GLOPE%2C%20I%20want%20to%20buy%20GLOPE%20Honey%20250%20g%20-%20Rs.%20139.%0A%0AQuantity%3A%201%0AName%3A%0AFull%20Delivery%20Address%3A%0APincode%3A%0APayment%20Preference%3A%20COD%20%2F%20UPI%20%2F%20Bank%20Transfer%0A%0APlease%20confirm%20the%20final%20amount%20including%20shipping." target="_blank" rel="noopener" data-i18n="buyNow">BUY NOW →</a>
         </div>
       </article>
-    </div>
+    </div><div class="glope-carousel-controls" aria-label="Product carousel controls"><button type="button" data-carousel-prev aria-label="Previous products" title="Previous products">←</button><button type="button" data-carousel-next aria-label="Next products" title="Next products">→</button></div></div>
 
     <div class="policy-quick-links" aria-label="Customer care and policies">
       <p class="policy-quick-title" data-i18n="policyQuickTitle">CUSTOMER CARE &amp; POLICIES</p>
@@ -307,6 +308,8 @@
   </div>
 </section>
 
+<section class="customer-reviews" id="reviews" hidden aria-hidden="true" data-review-state="awaiting-genuine-feedback"><div class="wrap"><p class="eyebrow">CUSTOMER REVIEWS</p><h2>Real experiences. Shared honestly.</h2><p>Customer feedback will appear here after genuine reviews have been collected and verified.</p></div></section>
+
 <section class="faq-section" id="faq">
   <div class="wrap">
     <div class="faq-head">
@@ -374,5 +377,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="homepage-v20.js" defer></script>
 </body>
 </html>
