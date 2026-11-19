@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
-  "name": "glope-website",
+  "name": "glope-v20-preview",
   "compatibility_date": "2026-10-07",
   "assets": {
     "directory": "./"
