@@ -8,5 +8,5 @@ Language switch:
 - Choice is saved in the browser using localStorage.
 - English is the default.
 - Hindi is written as natural, brand-appropriate Hindi rather than machine-translated text.
-
+V20 Cloudflare preview test.
 All existing GLOPE images and the FSSAI logo are included.
