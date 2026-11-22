@@ -27,7 +27,7 @@ a{text-decoration:none;color:inherit}
 h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
 .eyebrow,.mini-label{font-size:9px;letter-spacing:3px;color:#a56e0d;font-weight:800}
 .hero{min-height:625px;background:linear-gradient(120deg,#fbf5e8 0%,#f8efd9 58%,#eeddb9 100%);overflow:hidden}
-.hero-grid{min-height:625px;display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:center}
+.hero-grid{min-height:625px;display:grid;grid-template-columns:.84fr 1.16fr;gap:30px;align-items:center}
 .hero-copy{padding:55px 0}
 .hero h1{font-size:clamp(58px,7vw,92px);line-height:.94;letter-spacing:-3px;color:var(--green);margin:0}
 .hero h1 em{font-style:normal;color:var(--gold)}
@@ -365,7 +365,7 @@ html{scroll-padding-top:92px}
   .hero-grid{min-height:590px}
   .hero-copy{padding:42px 0}
   .hero-visual{min-height:520px}
-  .hero-image-wrap{width:min(520px,100%)}
+  .hero-image-wrap{width:min(560px,100%)}
 
   .section{padding:72px 0 64px}
   .section-head{margin-bottom:34px}
